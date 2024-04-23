@@ -4,6 +4,10 @@ body {
     text-align: left;
 }
 
+table {
+	font-family: helvetica;
+}
+
 div.background {
     background-image: url('/root/style_elements/background.png');
     filter: blur(4px);
@@ -60,6 +64,69 @@ img.thumbnail {
 	object-fit: cover;
 }
 
+img.profile {
+	object-fit:cover;
+	width: 125px;
+	height: 125px;
+	border-radius: 70px;
+}
+
+img.profile-link {
+	width: 40px;
+	height: 40px;
+}
+
+div.profile_box {
+	float: right;
+	height: 125px;
+	width: 125px;
+	border-radius: 70px;
+	border-style: solid;
+	border-width: 8px;
+	background: gray;
+	
+	transition: width 100ms ease-in-out;
+}
+
+div.profile_box > table {
+	visibility: hidden;
+	opacity: 0;
+	
+	transition: opacity 200ms;
+}
+
+div.profile_box:hover {
+	width: 100%;
+}
+
+div.profile_box:hover > table {
+	transition-delay: 100ms;
+	visibility: visible;
+	opacity: 1;
+	
+}
+
+img.split-thumbnail-right {
+	float: right;
+	width: 33.33%;
+	height: 50px;
+	object-fit: cover;
+}
+
+img.split-thumbnail-mid {
+	margin: auto;
+	width: 33.33%;
+	height: 50px;
+	object-fit: cover;
+}
+
+img.split-thumbnail-left {
+	float: left;
+	width: 33.33%;
+	height: 50px;
+	object-fit: cover;
+}
+
 a.clean {
 	text-decoration: inherit;
 	color: inherit;
@@ -67,6 +134,11 @@ a.clean {
 
 p.subtitle {
 	text-align: center;
+}
+
+span.tab {
+    display: inline-block;
+    margin-left: 60;
 }
 
 h1 {
