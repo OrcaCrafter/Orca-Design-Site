@@ -9,7 +9,7 @@ table {
 }
 
 div.background {
-    background-image: url('/root/style_elements/background.png');
+    background-image: url('/Orca-Design-Site/style_elements/background.png');
     filter: blur(4px);
     position: fixed;
     top: 0;
