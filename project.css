@@ -1,2 +1,26 @@
 
 
+body {
+	background: gray;
+}
+
+input[type=checkbox].content_list {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
+}
+
+input[type=checkbox].content_list + div {
+	visibility: hidden;
+	height: 0;
+}
+
+input[type=checkbox]:checked.content_list + div {
+	visibility: visible;
+	height: 100%;
+}
