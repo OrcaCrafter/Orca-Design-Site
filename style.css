@@ -1,13 +1,150 @@
+
+/*-------------------------*/
+/*----- Default Formatting */
+/*-------------------------*/
+
 body {
     margin: 0;
     background: lightblue;
     text-align: left;
 }
 
-table {
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 52px;
+}
+
+p {
+    font-family: helvetica;
+    font-size: 20px;
+}
+
+/*-----------------------*/
+/*----- Image Formatting */
+/*-----------------------*/
+
+/* This is the formatting for the profile picture */
+img.profile {
+	object-fit:cover;
+	width: 125px;
+	height: 125px;
+	border-radius: 70px;
+}
+
+/* This is the formatting used for the website link icons */
+img.profile-link {
+	width: 50px;
+	height: 50px;
+}
+
+/* This is the formatting used when a project has 1 image*/
+img.thumbnail {
+	float: right;
+	width: 30%;
+	height: 250px;
+	object-fit: cover;
+}
+
+img.split-thumbnail-right {
+	float: right;
+	width: 33.33%;
+	height: 50px;
+	object-fit: cover;
+}
+
+img.split-thumbnail-mid {
+	margin: auto;
+	width: 33.33%;
+	height: 50px;
+	object-fit: cover;
+}
+
+img.split-thumbnail-left {
+	float: left;
+	width: 33.33%;
+	height: 50px;
+	object-fit: cover;
+}
+
+/*-----------------------*/
+/*----- Class Formatting */
+/*-----------------------*/
+
+/*Adds an in-line tab that doesn't require <p> tags */
+
+/*-----------------*/
+/*----- Animations */
+/*-----------------*/
+
+/*Base properties of the box containing the profile pic*/
+div.profile_box {
+	float: right;
+	height: 125px;
+	width: 125px;
+	border-radius: 70px;
+	border-style: solid;
+	border-width: 8px;
+	background: gray;
+	
+	/*Animates the expansions over 100ms*/
+	transition: width 100ms ease-in-out;
+}
+
+/*Hide the used to store the links*/
+div.profile_box > table {
+	visibility: hidden;
+	opacity: 0;
+	
+	/*Animates the opacity over 200ms*/
+	transition: opacity 200ms;
+}
+
+/*On hover, expand the profile box to fit the table*/
+div.profile_box:hover {
+	width: 100%;
+}
+
+/*On hover, make the table visible & animate in opacity */
+div.profile_box:hover > table {
+	transition-delay: 100ms;
+	visibility: visible;
+	opacity: 1;
 	
 }
 
+/*------------------------*/
+/*----- Mobile Formatting */
+/*------------------------*/
+
+
+/* By default hide the mobile elements */
+div.format_mobile {
+	display: none;
+}
+
+/* Apply 'mobile' formatting when ever the site is less than 1050px wide */
+@media only screen and (max-width: 1050px) {
+	div.format_mobile {
+		display: block;
+	}
+	
+	div.format_desktop {
+		display: none;
+	}
+	
+	td.project_list {
+		display: table-row;
+	}
+	
+	div.title_box {
+		width: 80%;
+	}
+}
+
+
+
+/* TODO Organize & label this */
 div.background {
     background-image: url('/style_elements/background.png');
     filter: blur(4px);
@@ -57,104 +194,17 @@ div.project-preview-text {
 	font-size: 24px;
 }
 
-img.thumbnail {
-	float: right;
-	width: 30%;
-	height: 250px;
-	object-fit: cover;
-}
 
-img.profile {
-	object-fit:cover;
-	width: 125px;
-	height: 125px;
-	border-radius: 70px;
-}
 
-img.profile-link {
-	width: 40px;
-	height: 40px;
-}
-
-div.profile_box {
-	float: right;
-	height: 125px;
-	width: 125px;
-	border-radius: 70px;
-	border-style: solid;
-	border-width: 8px;
-	background: gray;
-	
-	transition: width 100ms ease-in-out;
-}
-
-div.profile_box > table {
-	visibility: hidden;
-	opacity: 0;
-	
-	transition: opacity 200ms;
-}
-
-div.profile_box:hover {
-	width: 100%;
-}
-
-div.profile_box:hover > table {
-	transition-delay: 100ms;
-	visibility: visible;
-	opacity: 1;
-	
-}
-
-img.split-thumbnail-right {
-	float: right;
-	width: 33.33%;
-	height: 50px;
-	object-fit: cover;
-}
-
-img.split-thumbnail-mid {
-	margin: auto;
-	width: 33.33%;
-	height: 50px;
-	object-fit: cover;
-}
-
-img.split-thumbnail-left {
-	float: left;
-	width: 33.33%;
-	height: 50px;
-	object-fit: cover;
-}
-
+/* Removes the automatic formatting for links */
 a.clean {
 	text-decoration: inherit;
 	color: inherit;
 }
 
-p.subtitle {
-	text-align: center;
-}
 
 span.tab {
     display: inline-block;
     margin-left: 60;
 }
 
-h1 {
-    margin: 0;
-    text-align: center;
-    font-size: 52px;
-}
-
-p {
-    font-family: helvetica;
-    font-size: 20px;
-}
-
-p.portfolio {
-	background: gray;
-	margin-top: 4px;
-    font-size: 60px;
-    color: darkblue;
-}
