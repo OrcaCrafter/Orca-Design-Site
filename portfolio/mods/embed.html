@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
+    <meta charset="ISO-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mod List | Orca Design</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="icon" type="image/x-icon" href="/style_elements/profile_pic.ico">
 </head>
-<body>
+<body id="wip">
 	<header>
 		<div style="width:80%; margin-left:50px; margin-top:25px">
 			<h2>
@@ -16,66 +16,58 @@
 			</h2>
 		</div>
 	</header>
-    <div style="width: 100%; overflow:auto;">
-    	<a href="/portfolio/mods/tf2/list.html" class="clean">
-		    <div style="float:left; width: 50%; cursor:pointer">
-		    	<div class="project-preview">
-	    			<img class="thumbnail" src="/style_elements/thumbnails/tf2_mods.png" alt="Team Fortress 2 Mods">
-	    			<p style="width: 66%; float:left; margin-left:2.5%">
-	    				<b style="font-size: 20px" aria-hidden="true">Team Fortress 2<br></b>
-	    				TODO Team fortress 2 mods
-	    			</p>
-	    		</div>
-		    </div>
-	    </a>
-	    <a href="/portfolio/mods/sm64/list.html" class="clean">
-	    	<div style="float:right; width:50%; cursor:pointer">
-		    	<div class="project-preview">
-	    			<p style="width: 66%; float:left; margin-left:2.5%">
-	    				<b style="font-size: 20px">Super Mario 64<br></b>
-	    				TODO mario 64 mods
-	    			</p>
-	    			<img class="thumbnail" src="/style_elements/thumbnails/sm64_mods.png" alt="Super Mario 64 Mods">
-	    		</div>
-	    	</div>
-    	</a>
+	
+	<div class="wip_notice">
+		<div class="wip">
+    		<a href="">WIP Enabled</a>
+    	</div>
+    </div>
+    <div class="anti_wip">
+   		<div class="wip_notice" style="background:white">
+    		<a href="#wip">WIP Disabled</a>
+    	</div>
+    </div>
+	
+	<div class="project-list">
+		<div class="list-entry project-preview">
+	  		<a href="/portfolio/mods/tf2/list.html" class="clean">
+	   			<div style="width:100%; height:100%">
+					<object class="preview" type="text/html" data="snippets/tf2_snippet.html"></object>
+				</div>
+			</a>
+	  	</div>
+	  	
+	  	<div class="list-entry project-preview wip">
+	  		<a href="/portfolio/mods/sm64/list.html" class="clean">
+	   			<div style="width:100%; height:100%">
+					<object class="preview" type="text/html" data="snippets/sm64_snippet.html"></object>
+				</div>
+			</a>
+	  	</div>
+	  	
+	  	<div class="list-entry project-preview wip">
+	  		<a href="/portfolio/mods/minecraft/list.html" class="clean">
+	   			<div style="width:100%; height:100%">
+					<object class="preview" type="text/html" data="snippets/mc_snippet.html"></object>
+				</div>
+			</a>
+	  	</div>
+	  	
+	  	<div class="list-entry project-preview wip">
+	  		<a href="/portfolio/mods/vrchat/list.html" class="clean">
+	   			<div style="width:100%; height:100%">
+					<object class="preview" type="text/html" data="snippets/vrc_snippet.html"></object>
+				</div>
+			</a>
+	  	</div>
+	  	
+	  	<div class="list-entry project-preview wip">
+	  		<a href="/portfolio/mods/misc/list.html" class="clean">
+	   			<div style="width:100%; height:100%">
+					<object class="preview" type="text/html" data="snippets/other_snippet.html"></object>
+				</div>
+			</a>
+	  	</div>
 	</div>
-	<div style="width: 100%; overflow:auto;">
-		<a href="/portfolio/mods/minecraft/list.html" class="clean">
-		    <div style="float:left; width: 50%; cursor:pointer">
-		    	<div class="project-preview">
-	    			<p style="width: 66%; float:left; margin-left:2.5%">
-	    				<b style="font-size: 20px">Minecraft<br></b>
-	    				TODO minecraft mods
-	    			</p>
-	    			<img class="thumbnail" src="/style_elements/thumbnails/mc_mods.png" alt="Minecraft Mods">
-	    		</div>
-		    </div>
-	    </a>
-	    <a href="/portfolio/mods/vrchat/list.html" class="clean">
-	    	<div style="float:right; width:50%; cursor:pointer">
-		    	<div class="project-preview">
-	    			<p style="width: 66%; float:left; margin-left:2.5%">
-	    				<b style="font-size: 20px">VR Chat<br></b>
-	    				TODO VR chat
-	    			</p>
-	    			<img class="thumbnail" src="https://images.squarespace-cdn.com/content/v1/5f0770791aaf57311515b23d/64ea7bc8-02c5-4c1e-97cf-5c3aa79300f6/VRC_Logo.png" alt="VR Chat">
-	    		</div>
-	    	</div>
-    	</a>
-    </div>
-    <div style="width: 100%; overflow:auto;">
-		<a href="/portfolio/mods/misc/list.html" class="clean">
-		    <div style="float:left; width: 50%; cursor:pointer">
-		    	<div class="project-preview">
-	    			<p style="width: 66%; float:left; margin-left:2.5%">
-	    				<b style="font-size: 20px">Misc Mods<br></b>
-	    				TODO misc mods
-	    			</p>
-	    			<img class="thumbnail" src="/style_elements/thumbnails/TEMP.png" alt="Misc Mods">
-	    		</div>
-		    </div>
-	    </a>
-    </div>
 </body>
 </html>

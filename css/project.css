@@ -6,6 +6,8 @@
 
 body {
 	background: gray;
+	margin-left:100px;
+	margin-right:100px;
 }
 
 input[type=checkbox].content_list {
