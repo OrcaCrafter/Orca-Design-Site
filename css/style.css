@@ -5,7 +5,7 @@
 
 body {
     margin: 0;
-    background: lightblue;
+    background: #4040a1;
     text-align: left;
 }
 
@@ -146,6 +146,11 @@ div.wip_notice {
 	background: red;
 }
 
+div.preview {
+	width: 100%;
+	height: 100px;
+}
+
 
 /*------------------------*/
 /*----- Mobile Formatting */
@@ -263,4 +268,3 @@ span.tab {
     display: inline-block;
     margin-left: 60;
 }
-

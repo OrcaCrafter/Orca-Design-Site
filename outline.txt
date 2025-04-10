@@ -3,6 +3,14 @@
 
 Viewing pages
 
+css
+html
+js
+portfolio
+style_elements
+web-embed
+
+
 Source pages
 	Full portfolio
 	 |- Java Project Page

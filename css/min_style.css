@@ -1,0 +1,199 @@
+
+
+body {
+	background: #4040a1
+}
+
+a.clean {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+div.title {
+	background: #618685;
+	margin: 15px;
+	margin-left: 16.66%;
+}
+
+h1.title {
+	margin: 15px;
+	font-family: helvetica;
+    text-align: center;
+    font-size: 100px;
+    color: #181818;
+}
+
+div.sub_title {
+	background: #181818;
+	margin: 0;
+	margin-left: 16.66%;
+	margin-right: auto;
+	width: 50%;
+	border-radius: 0px 0px 15px 15px;
+	border: 15px;
+}
+
+div.sub_title > p {
+	margin: 5px;
+	margin-top: -15px;
+	font-family: helvetica;
+	text-align: center;
+	font-size: 30px;
+	color: #36486b
+}
+
+/* This is the formatting for the profile picture */
+img.profile {
+	object-fit:cover;
+	width: 125px;
+	height: 125px;
+	border-radius: 70px;
+}
+
+/* This is the formatting used for the website link icons */
+img.profile-link {
+	width: 50px;
+	height: 50px;
+}
+
+/*Base properties of the box containing the profile pic*/
+div.profile_box {
+	float: left;
+	height: 125px;
+	width: 125px;
+	border-radius: 70px;
+	border-style: solid;
+	border-width: 8px;
+	background: gray;
+	
+	/*Animates the expansions over 100ms*/
+	transition: width 100ms ease-in-out;
+}
+
+/*Hide the used to store the links*/
+div.profile_box > table {
+	visibility: hidden;
+	opacity: 0;
+	
+	/*Animates the opacity over 200ms*/
+	transition: opacity 200ms;
+}
+
+/*On hover, expand the profile box to fit the table*/
+div.profile_box:hover {
+	width: 100%;
+}
+
+/*On hover, make the table visible & animate in opacity */
+div.profile_box:hover > table {
+	transition-delay: 100ms;
+	visibility: visible;
+	opacity: 1;
+	
+}
+
+
+div.pages {
+	height: 100px;
+	width: 100%;
+}
+
+div.page_tab {
+	background: #181818;
+	width: 250px;
+	height: 50px;
+	border-radius: 15px 15px 0px 0px;
+	font-size: 30px;
+	color: white;
+	text-align: center;
+	font-family: helvetica;
+	border: 15px;
+}
+
+body#projects:target div.page_tab.project_tab {
+	background: #618685;
+}
+
+body#resume:target div.page_tab.resume_tab {
+	background: #618685;
+}
+
+body#model_viewer:target div.page_tab.model_tab {
+	background: #618685;
+}
+
+body#projects:target div.pages > div.project_page {
+	z-index: 10;
+}
+
+body#projects:target div.pages > div.project_page > iframe {
+	-webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+}
+
+body#projects:target div.pages > div.resume_page {
+	z-index: 0;
+}
+
+body#projects:target div.pages > div.resume_page > iframe {
+	-webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+body#model_viewer:target div.pages > div.model_viewer {
+	z-index: 0;
+}
+
+body#model_viewer:target div.pages > div.model_viewer > iframe {
+	-webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+div.project_page {
+	margin:0;
+	margin-left:0;
+	position: absolute;
+	width: 100%;
+	z-index: 0;
+}
+
+div.project_page > iframe {
+	-webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+div.resume_page {
+	margin:0;
+	margin-left:5%;
+	position: absolute;
+	width: 100%;
+	z-index: 10;
+}
+
+div.model_viewer {
+	margin:0;
+	margin-left:0;
+	position: absolute;
+	width: 100%;
+	z-index: 0;
+}
+
+div.model_viewer > iframe {
+	-webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
