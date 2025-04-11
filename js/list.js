@@ -1,8 +1,11 @@
 
-function SetupListPage (listSource) {
-    copyElementByID('/html/header.html', '#header', '#header');
+function SetupListPage (listSource, ...steps) {
+
+    BuildPaths(steps);
+
+    CopyElementByID('/html/header.html', '#header', '#header');
 	
-	copyElementByID(listSource, "#project-list", "#projects").then(() => {
+	CopyElementByID(listSource, "#project-list", "#projects").then(() => {
         //Get all listed previews
 		const previews = document.querySelectorAll("div.preview");
 
@@ -39,7 +42,7 @@ function SetupListPage (listSource) {
             list.appendChild(div);
            
             //Populate link snippets
-			copyElement(source, '#snippet', preview).then(() => {
+			CopyElement(source, '#snippet', preview).then(() => {
 				//console.log('Header copied successfully!');
 			}).catch((error) => {
 				console.error('Failed to copy header:', error);
@@ -50,6 +53,6 @@ function SetupListPage (listSource) {
 		console.error('Failed to copy projects:', error);
 	});
 	
-	buildPaths();
+	
 }
 		

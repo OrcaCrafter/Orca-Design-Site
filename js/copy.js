@@ -3,17 +3,17 @@
  * 
  */
 
-async function copyElementByID (filePath, elementSelector, targetSelector) {
+async function CopyElementByID (filePath, elementSelector, targetSelector) {
 	const targetElement = document.querySelector(targetSelector);
 	if (!targetElement) {
 		throw new Error(`Target element with selector "${targetSelector}" not found in current document.`);
 	}
 	
-	await copyElement(filePath, elementSelector, targetElement);
+	await CopyElement(filePath, elementSelector, targetElement);
 }
 
 
-async function copyElement (filePath, elementSelector, targetElement) {
+async function CopyElement (filePath, elementSelector, targetElement) {
 	
 	try {
 		const response = await fetch(filePath);

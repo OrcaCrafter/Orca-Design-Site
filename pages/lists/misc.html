@@ -15,6 +15,7 @@
     <link rel="icon" type="image/x-icon" href="/style_elements/profile_pic.ico">
     <script src="/js/copy.js"></script>
 	<script src="/js/path.js"></script>
+	<script src="/js/list.js"></script>
 
 	<!-- Snippet -->
 	<div hidden>
@@ -46,6 +47,8 @@
 			</h2>
 		</div>
 	</header>
+
+	<div id="path"></div>
 	
 	<div id="projects">
 	</div>
@@ -62,6 +65,9 @@
     </div>
 </body>
 <script>
-	SetupListPage('/html/lists/misc.html');
+	SetupListPage('/html/lists/misc.html',
+		{file: "/pages/index.html", name:"Home"},
+		{file: "/pages/lists/project_list.html", name:"Projects"}
+	);
 </script>
 </html>
