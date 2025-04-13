@@ -1,0 +1,90 @@
+/*  
+ *  Formatting Information for the custom page header
+ */ 
+
+div.title {
+	background: #618685;
+	margin: 15px;
+	margin-left: 16.66%;
+}
+
+h1.title {
+	margin: 15px;
+	font-family: helvetica;
+    text-align: center;
+    font-size: 100px;
+    color: #181818;
+}
+
+div.sub_title {
+	background: #181818;
+	margin: 0;
+	margin-left: 16.66%;
+	margin-right: auto;
+	width: 50%;
+	border-radius: 0px 0px 15px 15px;
+	border: 15px;
+}
+
+div.sub_title > p {
+	margin: 5px;
+	margin-top: -15px;
+	font-family: helvetica;
+	text-align: center;
+	font-size: 30px;
+	color: #36486b
+}
+
+/* Profile pic formatting */
+img.profile {
+	object-fit:cover;
+	width: 125px;
+	height: 125px;
+	border-radius: 70px;
+}
+
+/* This is the formatting used for the website link icons */
+img.profile-link {
+	width: 50px;
+	height: 50px;
+}
+
+ /*Base properties of the box containing the profile pic*/
+div.profile_box {
+     float: left;
+     height: 125px;
+     width: 125px;
+     border-radius: 70px;
+     border-style: solid;
+     border-width: 8px;
+     background: gray;
+
+	 margin: 10px;
+     
+     /*Animates the expansions over 100ms*/
+     transition: width 100ms ease-in-out;
+ }
+
+ /* Functional */
+ 
+ /*Hide the used to store the links*/
+ div.profile_box > table {
+     visibility: hidden;
+     opacity: 0;
+     
+     /*Animates the opacity over 200ms*/
+     transition: opacity 200ms;
+ }
+ 
+ /*On hover, expand the profile box to fit the table*/
+ div.profile_box:hover {
+     width: 100%;
+ }
+ 
+ /*On hover, make the table visible & animate in opacity */
+ div.profile_box:hover > table {
+     transition-delay: 100ms;
+     visibility: visible;
+     opacity: 1;
+     
+ }
