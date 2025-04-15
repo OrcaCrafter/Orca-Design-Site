@@ -2,36 +2,30 @@
  *  Formatting Information for the custom page header
  */ 
 
-div.title {
+header.main-header {
 	background: #618685;
 	margin: 15px;
 	margin-bottom: 0;
-	margin-left: 75px;
+	border-top-left-radius: 65px;
 }
 
-div.title_box {
-	border-radius: 10px 0px 10px 0px;
-	background: darkslategray;
-	margin-left: 6.66%;
-	width: 60%;
-	border-color: black;
-	border-width: 12px;
-	border-style: ridge;
+div.title {
+	padding-top: 15px;
 }
 
 h1.title {
-	margin: 15px;
+	margin-bottom: 15px;
 	font-family: helvetica;
-    text-align: center;
+    text-align: left;
     font-size: 100px;
     color: #181818;
-	height: 140px;
+	height: 125px;
 }
 
 div.sub_title {
 	background: #181818;
 	margin: 0;
-	margin-left: -305px;
+	margin-left: -365px;
 	margin-right: auto;
 	width: 475px;
 	border-radius: 0px 0px 15px 15px;
@@ -58,9 +52,9 @@ div#path * {
 
 div#path {
 	margin-top: 0;
-	margin-right: 15px;
+	margin-right: 0px;
 	height: 25px;
-	margin-left: 550px;
+	margin-left: 15px;
 	font-weight: bold;
 	background-color: cornflowerblue;
 }
