@@ -6,8 +6,6 @@
 function BuildPaths (steps) {
 	const paths = document.querySelectorAll("div#path");
 
-	console.log(paths);
-
 	for (var i = 0; i < paths.length; i++) {
 		PopulatePathElement(paths[i], steps);
 	}
