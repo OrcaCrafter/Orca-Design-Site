@@ -1,0 +1,48 @@
+/*  
+ *  Used to make div & image carousels
+ */ 
+
+
+.carousel {
+    position: relative;
+}
+
+.carousel ul {
+    list-style-type: none;
+}
+
+.slide {
+    padding-left: 100px;
+    padding-right: 100px;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+
+.slide[data-active] {
+    opacity: 1;
+}
+
+.carousel-button {
+    position: absolute;
+    z-index: 100;
+    background: none;
+    border: none;
+    font-size: 4rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.carousel-button:focus,
+.carousel-button:hover {
+    color: white;
+}
+
+.carousel-button.prev {
+    left: 1rem;
+}
+
+.carousel-button.next {
+    right: 1rem;
+}

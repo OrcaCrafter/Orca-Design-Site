@@ -2,10 +2,16 @@
  *  Formatting Information for the custom page header
  */ 
 
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 52px;
+}
+
 header.main-header {
 	background: #618685;
 	margin: 15px;
-	margin-bottom: 0;
+	margin-bottom: 25px;
 	border-top-left-radius: 68px;
 }
 
@@ -113,3 +119,28 @@ div.profile_box {
      opacity: 1;
      
  }
+
+/*------------------------*/
+/*----- Mobile Formatting */
+/*------------------------*/
+
+
+/* By default hide the mobile elements */
+div.format_mobile {
+	display: none;
+}
+
+/* Apply 'mobile' formatting when ever the site is less than 1050px wide */
+@media only screen and (max-width: 1050px) {
+	div.format_mobile {
+		display: block;
+	}
+	
+	div.format_desktop {
+		display: none;
+	}
+	
+	div.title_box {
+		width: 80%;
+	}
+}
