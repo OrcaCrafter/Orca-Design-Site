@@ -18,7 +18,7 @@ async function CopyElement (filePath, elementSelector, targetElement) {
 	try {
 		const response = await fetch(filePath);
 		if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`);
+			throw new Error(`HTTP error! status: ${response.status}, path: ${filePath}`);
 		}
 		const html = await response.text();
 		

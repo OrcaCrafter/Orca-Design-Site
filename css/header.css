@@ -6,7 +6,7 @@ header.main-header {
 	background: #618685;
 	margin: 15px;
 	margin-bottom: 0;
-	border-top-left-radius: 65px;
+	border-top-left-radius: 68px;
 }
 
 div.title {
@@ -84,6 +84,7 @@ div.profile_box {
 	background: gray;
 
 	margin: 10px;
+	margin-left: 15px;
 
 	/*Animates the expansions over 100ms*/
 	transition: width 100ms ease-in-out;

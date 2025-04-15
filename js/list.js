@@ -55,4 +55,71 @@ function SetupListPage (listSource, ...steps) {
 	
 	
 }
-		
+
+
+function SetupGamePage (listSource, ...steps) {
+
+    CopyElementByID('/html/header.html', '#header', '#header').then(() => {
+        BuildPaths(steps);
+    });
+	
+	CopyElementByID(listSource, "#game-list", "#games").then(() => {
+        //Get all listed previews
+		const previews = document.querySelectorAll("div.game");
+        
+        const list = document.getElementById("game-list");
+
+        //Iterate
+		for (var i = 0; i < previews.length; i++) {
+			const preview = previews.item(i);
+			
+            //Get source path from preview
+			const source = preview.getAttribute('src');
+
+            fetch(source)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+
+                    SetupGamePreview(list, preview, data);
+                })
+                .catch(error => {
+                    console.error('Error loading JSON:', error);
+                });
+		}
+	}).catch((error) => {
+		console.error('Failed to copy projects:', error);
+	});
+	
+}
+
+function SetupGamePreview (list, preview, info) {
+    //Wrap button in div
+    var div = document.createElement('div');
+    div.classList.add("list-entry", "game-preview");
+
+    div.addEventListener('click', function() {
+        //TODO remove any currently running games
+
+        SetupUnityGame(info);
+
+    });
+
+    var wip = preview.getAttribute("wip");
+
+    if (wip != null) {
+        div.classList.add("wip");
+    }
+
+    div.appendChild(preview);
+
+    //Add div to list
+    list.appendChild(div);
+
+    //Populate link snippets
+    CopyElement(info.snippet, '#snippet', preview).then(() => {
+        //console.log('Header copied successfully!');
+    }).catch((error) => {
+        console.error('Failed to copy header:', error);
+    });
+}
