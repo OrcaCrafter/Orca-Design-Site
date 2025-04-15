@@ -1,9 +1,9 @@
 
 function SetupListPage (listSource, ...steps) {
 
-    BuildPaths(steps);
-
-    CopyElementByID('/html/header.html', '#header', '#header');
+    CopyElementByID('/html/header.html', '#header', '#header').then(() => {
+        BuildPaths(steps);
+    });
 	
 	CopyElementByID(listSource, "#project-list", "#projects").then(() => {
         //Get all listed previews

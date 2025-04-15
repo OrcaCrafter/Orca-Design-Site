@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>PROJECT NAME | Orca Design</title>
+	<link rel="stylesheet" href="/css/project.css" />
+	<link rel="icon" type="image/x-icon" href="/style_elements/profile_pic.ico">
+	<script src="/js/path.js"></script>
+	<script src="/js/copy.js"></script>
+
+	<!-- Snippet -->
+	<div hidden>
+		<div class="snippet" id="snippet">
+			<p>
+				<b style="font-size: 20px" aria-hidden="true">PROJECT NAME<br></b>
+				PROJECT_DESCRIPTION
+			</p>
+			<img class="thumbnail" src="/style_elements/thumbnails/pictile.png" alt="PicTile">
+		</div>
+	</div>
+</head>
+<body>
+	<div id=header></div>
+	
+	<div class="content">
+		<h1>Project Title</h1>
+
+		<p>This is a description</p>
+	</div>
+
+	<script>
+		CopyElementByID('/html/header.html', '#header', '#header').then(() => {
+			BuildPaths([
+				{file: "/pages/index.html", name:"Home"},
+				{file: "/pages/lists/project_list.html", name:"Projects"},
+				//{file: "/pages/lists/mods.html", name:"Home"},
+				//{file: "/pages/lists/MOD_GROUP.html", name:"Projects"}
+			]);
+		});
+
+		
+	</script>
+</body>
+</html>

@@ -2,6 +2,23 @@
  *  
  */ 
 
+body {
+    margin: 0;
+	background: skyblue;
+    text-align: left;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 52px;
+}
+
+p {
+    font-family: helvetica;
+    font-size: 20px;
+}
+
 div.project-preview {
 	background: darkslategray;
 	border-width: 8px;
