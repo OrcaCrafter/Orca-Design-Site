@@ -28,22 +28,24 @@ buttons.forEach(button => {
     });
 });
 
-const carousels = document.querySelectorAll("[data-carousel]");
+window.onload = function () {
 
-carousels.forEach(carousel => {
+    const carousels = document.querySelectorAll("[data-carousel]");
 
-    var slides = carousel.querySelectorAll(".slide");
-    var height = 0;
+    carousels.forEach(carousel => {
 
-    console.log(slides);
+        var slides = carousel.querySelectorAll(".slide");
+        var height = 0;
+        
+        for (var i = 0; i < slides.length; i++) {
+            var checkHeight = slides[i].scrollHeight;
 
-    slides.forEach(slide => {
-        if (slide.scrollHeight > height) {
-            height = slide.scrollHeight;
+            if (checkHeight > height) {
+                height = checkHeight;
+            }
         }
+
+        carousel.style.height = `${height}px`;
     });
 
-    carousel.style.height = `${height}px`;
-
-    console.log(height);
-});
+}

@@ -5,9 +5,11 @@
 	<title>PROJECT NAME | Orca Design</title>
 	<link rel="stylesheet" href="/css/general.css" />
 	<link rel="stylesheet" href="/css/project.css" />
+	<link rel="stylesheet" href="/css/carousel.css" />
 	<link rel="icon" type="image/x-icon" href="/style_elements/profile_pic.ico">
 	<script src="/js/path.js"></script>
 	<script src="/js/copy.js"></script>
+	<script src="/js/carousel.js" defer></script>
 
 	<!-- Snippet -->
 	<div hidden>
@@ -16,7 +18,7 @@
 				<b style="font-size: 20px" aria-hidden="true">PROJECT NAME<br></b>
 				PROJECT_DESCRIPTION
 			</p>
-			<img class="thumbnail" src="/style_elements/thumbnails/pictile.png" alt="PicTile">
+			<img class="thumbnail" src="/style_elements/thumbnails/IMAGE.png" alt="NAME">
 		</div>
 	</div>
 </head>
@@ -28,6 +30,25 @@
 
 		<h3>Section title</h3>
 		<p>This is a description</p>
+
+
+		<h3>Example Carousel</h3>
+		<div class="carousel" style="background: darkgray; min-height: 200px;" data-carousel>
+			<button class="carousel-button prev" data-carousel-button=-1>&#8656;</button>
+			<button class="carousel-button next" data-carousel-button=1>&#8658;</button>
+			<ul data-slides>
+				<li class="slide" data-active>
+					<h3>Slide 1</h3>
+					<p>Text</p>
+					<img src="/style_elements/profile_pic.jpg">
+				</li>
+				<li class="slide">
+					<h3>Slide 2</h3>
+					<p>Text</p>
+					<img style="height: 50%; object-fit: cover;"src="/style_elements/background.png">
+				</li>
+			</ul>
+		</div>
 	</div>
 
 	<script>
