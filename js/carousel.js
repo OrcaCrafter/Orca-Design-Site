@@ -28,11 +28,16 @@ buttons.forEach(button => {
     });
 });
 
-window.onload = function () {
+window.onload = sizeCarousel;
+window.onresize = sizeCarousel;
 
+function sizeCarousel () {
     const carousels = document.querySelectorAll("[data-carousel]");
 
     carousels.forEach(carousel => {
+
+        /*Force reset the size, otherwise it will never shrink down again*/
+        carousel.style.height = `0px`;
 
         var slides = carousel.querySelectorAll(".slide");
         var height = 0;

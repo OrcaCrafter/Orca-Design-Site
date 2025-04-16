@@ -8,6 +8,16 @@ div.content {
 	margin-right:100px;
 }
 
+p.sub {
+	position: absolute;
+	bottom: 0;
+	font-style: italic;
+}
+
+model-viewer {
+	background: rgb(32, 32, 32);
+}
+
 input[type=checkbox].content_list {
 	position: absolute;
 	top: -9999px;
