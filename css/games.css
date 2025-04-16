@@ -50,12 +50,30 @@ div.list-entry {
 }
 
 div.game-preview {
-	background: darkslategray;
-	border-width: 8px;
-	border-style: ridge;
+	border-width: 10px;
+	border-style: outset;
 	border-radius: 10px 0px 10px 0px;
+	border-color: gray;
 	margin: 25px;
 	cursor: pointer;
+	z-index: 0;
+	box-shadow:
+		inset 0px 0px 0px 5px rgb(64, 64, 64),
+		2px 2px 5px 5px rgba(0, 0, 0, 0.5),
+		/* This is a terrible way to do the background */
+		inset 0px 0px 0px 100vh darkslategray;
+}
+
+div.game-preview * {
+	position: relative;
+	z-index: -1;
+}
+
+div.game-preview a {
+	display: block;
+    height: 100%;
+    width: 100%;
+	z-index: 10;
 }
 
 div.game-preview::after {
@@ -78,7 +96,6 @@ div.game-list {
 /* Snippet Formatting */
 
 div.snippet {
-	background: darkslategray;
 	margin: 0;
 }
 
