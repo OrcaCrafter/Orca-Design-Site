@@ -157,29 +157,3 @@ div.wip_notice {
 	bottom: 5px;
 	background: red;
 }
-
-
-/*------------------------*/
-/*----- Mobile Formatting */
-/*------------------------*/
-
-
-/* By default hide the mobile elements */
-div.format_mobile {
-	display: none;
-}
-
-/* Apply 'mobile' formatting when ever the site is less than 1050px wide */
-@media only screen and (max-width: 1050px) {
-	div.format_mobile {
-		display: block;
-	}
-	
-	div.format_desktop {
-		display: none;
-	}
-	
-	div.title_box {
-		width: 80%;
-	}
-}

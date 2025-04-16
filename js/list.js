@@ -79,8 +79,6 @@ function SetupGamePage (listSource, ...steps) {
             fetch(source)
                 .then(response => response.json())
                 .then(data => {
-                    console.log(data);
-
                     SetupGamePreview(list, preview, data);
                 })
                 .catch(error => {
@@ -99,10 +97,7 @@ function SetupGamePreview (list, preview, info) {
     div.classList.add("list-entry", "game-preview");
 
     div.addEventListener('click', function() {
-        //TODO remove any currently running games
-
         SetupUnityGame(info);
-
     });
 
     var wip = preview.getAttribute("wip");

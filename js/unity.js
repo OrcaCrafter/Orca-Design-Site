@@ -5,13 +5,29 @@
  * 
  */
 
+var UnityInstance = null;
+var Canvas;
+
 function SetupUnityGame (info) {
+    CloseInstance();
+
     var container = document.querySelector("#unity-container");
-    var canvas = document.querySelector("#unity-canvas");
+    Canvas = document.querySelector("#unity-canvas");
     var loadingBar = document.querySelector("#unity-loading-bar");
     var progressBarFull = document.querySelector("#unity-progress-bar-full");
     var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+    var closeButton = document.querySelector("#unity-close-button");
     var warningBanner = document.querySelector("#unity-warning");
+
+    fullscreenButton.onclick = () => {
+        if (UnityInstance) {
+            UnityInstance.SetFullscreen(true);
+        }
+    };
+
+    closeButton.onclick = () => {
+        CloseInstance();
+    };
 
     // Shows a temporary message banner/ribbon for a few seconds, or
     // a permanent error message on top of the canvas if type=='error'.
@@ -68,7 +84,7 @@ function SetupUnityGame (info) {
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
         container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
+        Canvas.className = "unity-mobile";
 
         // To lower canvas resolution on mobile devices to gain some
         // performance, uncomment the following line:
@@ -78,8 +94,8 @@ function SetupUnityGame (info) {
     } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        Canvas.style.width = "960px";
+        Canvas.style.height = "600px";
     }
 
     loadingBar.style.display = "block";
@@ -88,17 +104,25 @@ function SetupUnityGame (info) {
     script.src = loaderUrl;
 
     script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
+        createUnityInstance(Canvas, config, (progress) => {
             progressBarFull.style.width = 100 * progress + "%";
          }).then((unityInstance) => {
             loadingBar.style.display = "none";
-            fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-            };
+
+            UnityInstance = unityInstance;
         }).catch((message) => {
             alert(message);
         });
     };
 
     document.body.appendChild(script);
+}
+
+function CloseInstance () {
+    if (UnityInstance) {
+        UnityInstance.Quit();
+
+        Canvas.style.width = "0px";
+        Canvas.style.height = "0px";
+    }
 }
