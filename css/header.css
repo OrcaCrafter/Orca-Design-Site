@@ -61,8 +61,19 @@ div#path {
 	margin-right: 0px;
 	height: 25px;
 	margin-left: 15px;
-	font-weight: bold;
+	font-weight: bolder;
+
 	background-color: cornflowerblue;
+}
+
+div#path a {
+	font-weight: bold;
+	text-decoration: inherit;
+	color: inherit;
+}
+	
+div#path a:hover {
+	text-decoration: underline;
 }
 
 /* Profile pic formatting */
@@ -77,6 +88,13 @@ img.profile {
 img.profile-link {
 	width: 50px;
 	height: 50px;
+	filter: drop-shadow(0px 0px 1px black);
+
+	transition-duration: 15ms;
+}
+
+img.profile-link:hover {
+	filter: drop-shadow(0px 0px 5px black);
 }
 
  /*Base properties of the box containing the profile pic*/

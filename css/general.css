@@ -8,6 +8,14 @@ a.clean {
 	color: inherit;
 }
 
+a:not(.clean) {
+    text-decoration: none;
+}
+
+a:not(.clean):hover {
+    text-decoration: underline;
+}
+
 
 /* Path formatting */
 
