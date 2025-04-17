@@ -1,0 +1,164 @@
+/*  
+ *  Formatting Information for the custom page header
+ */ 
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 52px;
+}
+
+header.main-header {
+	background: #618685;
+	margin: 15px;
+	margin-bottom: 25px;
+	border-top-left-radius: 68px;
+}
+
+div.title {
+	padding-top: 15px;
+}
+
+h1.title {
+	margin-bottom: 15px;
+	font-family: helvetica;
+    text-align: left;
+    font-size: 100px;
+    color: #181818;
+	height: 125px;
+}
+
+div.sub_title {
+	background: #181818;
+	margin: 0;
+	margin-left: -365px;
+	margin-right: auto;
+	width: 475px;
+	border-radius: 0px 0px 15px 15px;
+	border: 15px;
+	float: left;
+}
+
+div.sub_title > p {
+	margin: 5px;
+	margin-right: 10px;
+	margin-left:10px;
+	font-family: helvetica;
+	text-align: left;
+	font-size: 30px;
+	color: #36486b
+}
+
+/*Path formatting*/
+div#path * {
+	font-size: 20px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+div#path {
+	margin-top: 0;
+	margin-right: 0px;
+	height: 25px;
+	margin-left: 15px;
+	font-weight: bolder;
+
+	background-color: cornflowerblue;
+}
+
+div#path a {
+	font-weight: bold;
+	text-decoration: inherit;
+	color: inherit;
+}
+	
+div#path a:hover {
+	text-decoration: underline;
+}
+
+/* Profile pic formatting */
+img.profile {
+	object-fit:cover;
+	width: 125px;
+	height: 125px;
+	border-radius: 70px;
+}
+
+/* This is the formatting used for the website link icons */
+img.profile-link {
+	width: 50px;
+	height: 50px;
+	filter: drop-shadow(0px 0px 1px black);
+
+	transition-duration: 15ms;
+}
+
+img.profile-link:hover {
+	filter: drop-shadow(0px 0px 5px black);
+}
+
+ /*Base properties of the box containing the profile pic*/
+div.profile_box {
+	float: left;
+	height: 125px;
+	width: 125px;
+	border-radius: 70px;
+	border-style: solid;
+	border-width: 8px;
+	background: gray;
+
+	margin: 10px;
+	margin-left: 15px;
+
+	/*Animates the expansions over 100ms*/
+	transition: width 100ms ease-in-out;
+ }
+
+ /* Functional */
+ 
+ /*Hide the used to store the links*/
+ div.profile_box > table {
+     visibility: hidden;
+     opacity: 0;
+     
+     /*Animates the opacity over 200ms*/
+     transition: opacity 200ms;
+ }
+ 
+ /*On hover, expand the profile box to fit the table*/
+ div.profile_box:hover {
+     width: 100%;
+ }
+ 
+ /*On hover, make the table visible & animate in opacity */
+ div.profile_box:hover > table {
+     transition-delay: 100ms;
+     visibility: visible;
+     opacity: 1;
+     
+ }
+
+/*------------------------*/
+/*----- Mobile Formatting */
+/*------------------------*/
+
+
+/* By default hide the mobile elements */
+div.format_mobile {
+	display: none;
+}
+
+/* Apply 'mobile' formatting when ever the site is less than 1050px wide */
+@media only screen and (max-width: 1050px) {
+	div.format_mobile {
+		display: block;
+	}
+	
+	div.format_desktop {
+		display: none;
+	}
+	
+	div.title_box {
+		width: 80%;
+	}
+}

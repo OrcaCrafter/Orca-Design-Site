@@ -1,13 +1,21 @@
 
-
-/* 
- * The defines the formatting for the pages about a specific document
- */
-
 body {
 	background: gray;
+}
+
+div.content {
 	margin-left:100px;
 	margin-right:100px;
+}
+
+p.sub {
+	position: absolute;
+	bottom: 0;
+	font-style: italic;
+}
+
+model-viewer {
+	background: rgb(32, 32, 32);
 }
 
 input[type=checkbox].content_list {

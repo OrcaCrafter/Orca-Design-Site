@@ -1,0 +1,35 @@
+/*  
+ *  Used for everything else
+ */ 
+
+/* Remove link styling */
+a.clean {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+a:not(.clean) {
+    text-decoration: none;
+}
+
+a:not(.clean):hover {
+    text-decoration: underline;
+}
+
+
+/* Path formatting */
+
+/* unvisited link */
+div.path a {
+    color: black;
+}
+
+/* mouse over link */
+div.path a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+div.path a:active {
+    color: blue;
+} 

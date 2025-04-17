@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+
+<!--
+	This document embeds the project list in a more minimal
+	and professional format
+-->
+
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games | Grady Bassingthwaite</title>
+    <link rel="stylesheet" href="/css/games.css"/>
+    <link rel="icon" type="image/x-icon" href="/style_elements/profile_pic.ico">
+    <script src="/js/copy.js"></script>
+	<script src="/js/path.js"></script>
+	<script src="/js/list.js"></script>
+	<script src="/js/unity.js"></script>
+</head>
+<body id="wip">
+
+	<div id="header"></div>
+	<header>
+		<div style="width:80%; margin-left:50px; margin-top:25px">
+			<h2>
+				Games
+			</h2>
+		</div>
+	</header>
+
+	<div class="game-box">
+		<div>
+			<button id="unity-close-button" class="close-game">
+				&#9746;
+			</button>
+		</div>
+		<div id="game-window">
+			<canvas id="unity-canvas" width=0 height=0 tabindex="-1"></canvas>
+			<div id="unity-loading-bar">
+				<div id="unity-logo"></div>
+				<div id="unity-progress-bar-empty">
+					<div id="unity-progress-bar-full"></div>
+				</div>
+			</div>
+			<div id="unity-warning"></div>
+		</div>
+		<div>
+			<button id="unity-fullscreen-button" class="set-fullscreen">
+				&#x26F6;
+			</button>
+		</div>
+	</div>
+	
+	<div id="games">
+	</div>
+	
+	<div class="wip_notice">
+		<div class="wip">
+    		<a href="">WIP Enabled</a>
+    	</div>
+    </div>
+    <div class="anti_wip">
+   		<div class="wip_notice" style="background:white">
+    		<a href="#wip">WIP Disabled</a>
+    	</div>
+    </div>
+</body>
+<script>
+	SetupGamePage('/html/game_list.html',
+		{file: "/pages/index.html", name:"Home"}
+	);
+</script>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+
+<!--
+	This document embeds the project list in a more minimal
+	and professional format
+-->
+
+<html lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | Grady Bassingthwaite</title>
+    
+    <link rel="stylesheet" href="/css/general.css"/>
+	<link rel="stylesheet" href="/css/list.css"/>
+	
+    <link rel="icon" type="image/x-icon" href="/style_elements/profile_pic.ico">
+    <script src="/js/copy.js"></script>
+	<script src="/js/path.js"></script>
+	<script src="/js/list.js"></script>
+
+	<!-- Snippet -->
+	<div hidden>
+		<div id="snippet" class="snippet">
+			<div style="bottom:0">
+				<!-- TODO Better banner images -->
+				<img class="banner_thumbnail" src="" alt="Mods">
+			</div>
+			<p style="width: 90%; margin-left:2.5%">
+				<b style="font-size: 20px">SM64 Mods</b><br>
+				<table style="width: 80%; margin-left:5%">
+					<!-- TODO list sm64 mods<tr>
+						<td>&#149; TITLE</td>
+						<td style="text-align:right">C++</td>
+					</tr> -->
+				</table>
+			<p>
+		</div>
+	</div>
+</head>
+<body id="wip">
+	
+	<div id="header"></div>
+	<header>
+		<div style="width:80%; margin-left:50px; margin-top:25px">
+			<h2>
+				Projects
+			</h2>
+		</div>
+	</header>
+
+	<div id="projects">
+	</div>
+	
+	<div class="wip_notice">
+		<div class="wip">
+    		<a href="">WIP Enabled</a>
+    	</div>
+    </div>
+    <div class="anti_wip">
+   		<div class="wip_notice" style="background:white">
+    		<a href="#wip">WIP Disabled</a>
+    	</div>
+    </div>
+	
+	<script>
+		SetupListPage("/html/lists/mods/sm64.html",
+			{file: "/pages/index.html", name:"Home"},
+			{file: "/pages/lists/project_list.html", name:"Projects"},
+			{file: "/pages/lists/mods.html", name: "Mods"}
+		);
+    </script>
+</body>
+</html>

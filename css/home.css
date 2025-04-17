@@ -1,0 +1,139 @@
+/*  
+ *  Used for the home page
+ */ 
+
+body {
+    margin: 0;
+    background: #4040a1;
+    text-align: left;
+}
+
+h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 52px;
+}
+
+p {
+    font-family: helvetica;
+    font-size: 20px;
+}
+
+#TEMPLATES {
+    visibility: hidden;
+}
+
+#TEMPLATES:target {
+    visibility: show;
+}
+
+div.home-tab {
+    display: flex;
+    align-self: center;
+    margin: auto;
+
+    font-size: 50px;
+    line-height: 100px;
+
+    width: 75%;
+    height: 100px;   
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-width: 10;
+    border-color: black;
+
+    transition: 250ms;
+
+    border-color: rgb(15, 37, 37);
+    border-width: 5px;
+    border-style: solid;
+}
+
+/* Slider background base */
+
+div.home-tab .tab-background {
+    position: absolute;
+    width: 75%;
+    height: 100px;
+    z-index: -5;
+    
+    transform: translate(-10px, -10px);
+
+    padding: 10px;
+
+    background-image: url('/style_elements/background.png');
+    background-size: 100%;
+}
+
+/* Slider background no hover */
+
+div.home-tab .tab-background.a {
+    background-position: 0 0;
+    filter:
+        hue-rotate(0deg)
+        blur(2px);
+}
+
+div.home-tab .tab-background.b {
+    background-position: 0 -120px;
+    filter:
+        hue-rotate(270deg)
+        blur(2px);
+}
+
+div.home-tab .tab-background.c {
+    background-position: 0 -240px;
+    filter:
+        hue-rotate(90deg)
+        blur(2px);
+}
+
+/* Slider background hover */
+
+div.home-tab:hover .tab-background.a {
+    filter:
+        hue-rotate(0deg)
+        blur(0px);
+}
+
+div.home-tab:hover .tab-background.b {
+    filter:
+        hue-rotate(270deg)
+        blur(0px);
+}
+
+div.home-tab:hover .tab-background.c {
+    filter:
+        hue-rotate(90deg)
+        blur(0px);
+}
+
+/*Slider*/
+
+div.home-tab div.slider {
+    background: 
+        linear-gradient(rgb(15, 37, 37), slategray 25%, slategray 75%, rgb(15, 37, 37));
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+
+    min-width: max-content;
+
+    padding-left: 25px;
+    padding-right: 25px;
+
+    height: 100%;
+    width: 100%;
+
+    transition: 250ms;
+
+    box-shadow: 
+        0px 0px 0px 5px rgb(15, 37, 37);
+}
+
+div.home-tab:hover div.slider {
+    display: block;
+    
+    width: 0;
+}
