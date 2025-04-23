@@ -13,6 +13,7 @@ header.main-header {
 	margin: 15px;
 	margin-bottom: 25px;
 	border-top-left-radius: 68px;
+	border-bottom-left-radius: 25px;
 }
 
 div.title {
@@ -23,11 +24,9 @@ div.title {
 h1.title {
 	margin-bottom: 15px;
 	font-family: helvetica;
-    font-size: clamp(5px, 8vw, 100px);
+    font-size: clamp(40px, 8vw, 100px);
     color: #181818;
 	height: 125px;
-
-	text-wrap: nowrap;
 }
 
 div.sub_title {
@@ -38,6 +37,8 @@ div.sub_title {
 	border-radius: 0px 0px 15px 15px;
 	border: 15px;
 	float: left;
+
+	min-height: 25px;
 }
 
 div.sub_title > p {
@@ -46,7 +47,7 @@ div.sub_title > p {
 	margin-left:10px;
 	font-family: helvetica;
 	text-align: left;
-	font-size: clamp(10px, 4vw, 30px);
+	font-size: clamp(10px, 2vw, 30px);
 	color: #36486b
 }
 
@@ -60,17 +61,27 @@ div#path * {
 div#path {
 	margin-top: 0;
 	margin-right: 0px;
-	height: 25px;
-	margin-left: 15px;
+	min-height: 25px;
 	font-weight: bolder;
 
 	background-color: cornflowerblue;
+
+	display: flex;
 }
 
 div#path a {
 	font-weight: bold;
 	text-decoration: inherit;
 	color: inherit;
+
+	flex: 0 1 auto;
+
+	display:block;
+
+	white-space: nowrap;
+
+	overflow: hidden;
+	text-overflow: ".";
 }
 	
 div#path a:hover {
@@ -178,5 +189,9 @@ div.format_mobile {
 @media (hover: none) {
 	a.profile-pic-link {
 		pointer-events: none;
+	}
+
+	a.title {
+		pointer-events: all;
 	}
 }
