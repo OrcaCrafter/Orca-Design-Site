@@ -174,7 +174,9 @@ div.format_mobile {
 	display: none;
 }
 
-/* Apply 'mobile' formatting when ever the site is less than 1050px wide */
-@media only screen and (max-width: 1024px) {
-
+/* Fix for mobile devices that cannot hover */
+@media (hover: none) {
+	a.profile-pic-link {
+		pointer-events: none;
+	}
 }
