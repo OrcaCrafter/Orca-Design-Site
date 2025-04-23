@@ -17,23 +17,24 @@ header.main-header {
 
 div.title {
 	padding-top: 15px;
+	padding-left: 150px;
 }
 
 h1.title {
 	margin-bottom: 15px;
 	font-family: helvetica;
-    text-align: left;
-    font-size: 100px;
+    font-size: clamp(5px, 8vw, 100px);
     color: #181818;
 	height: 125px;
+
+	text-wrap: nowrap;
 }
 
 div.sub_title {
 	background: #181818;
 	margin: 0;
-	margin-left: -365px;
+	margin-left: -125px;
 	margin-right: auto;
-	width: 475px;
 	border-radius: 0px 0px 15px 15px;
 	border: 15px;
 	float: left;
@@ -45,7 +46,7 @@ div.sub_title > p {
 	margin-left:10px;
 	font-family: helvetica;
 	text-align: left;
-	font-size: 30px;
+	font-size: clamp(10px, 4vw, 30px);
 	color: #36486b
 }
 
@@ -97,6 +98,14 @@ img.profile-link:hover {
 	filter: drop-shadow(0px 0px 5px black);
 }
 
+div.header_bounds {
+	float: left;
+	margin-top: -10px;
+	width: 125px;
+	position: relative;
+	z-index: 100
+}
+
  /*Base properties of the box containing the profile pic*/
 div.profile_box {
 	float: left;
@@ -108,7 +117,7 @@ div.profile_box {
 	background: gray;
 
 	margin: 10px;
-	margin-left: 15px;
+	margin-left: 0px;
 
 	/*Animates the expansions over 100ms*/
 	transition: width 100ms ease-in-out;
@@ -116,22 +125,39 @@ div.profile_box {
 
  /* Functional */
  
- /*Hide the used to store the links*/
- div.profile_box > table {
-     visibility: hidden;
-     opacity: 0;
-     
-     /*Animates the opacity over 200ms*/
-     transition: opacity 200ms;
+/*Hide the div used to store the links*/
+div.profile_box > .link-table {
+	visibility: hidden;
+	opacity: 0;
+
+	display: flex;
+	flex-wrap: wrap;
+
+	float: right;
+	margin-right: 5px;
+	width: 250px;
+
+	max-width: 100%;
+
+	/*Animates the opacity over 200ms*/
+	transition: opacity 200ms;
+ }
+
+ div.profile_box > .link-table div {
+	display: flex;
+	flex: 0 0 auto;
+	margin: 5px;
  }
  
  /*On hover, expand the profile box to fit the table*/
+ div.profile_box:focus,
  div.profile_box:hover {
-     width: 100%;
+     width: 380px;
  }
  
  /*On hover, make the table visible & animate in opacity */
- div.profile_box:hover > table {
+ div.profile_box:focus > .link-table,
+ div.profile_box:hover > .link-table {
      transition-delay: 100ms;
      visibility: visible;
      opacity: 1;
@@ -149,16 +175,6 @@ div.format_mobile {
 }
 
 /* Apply 'mobile' formatting when ever the site is less than 1050px wide */
-@media only screen and (max-width: 1050px) {
-	div.format_mobile {
-		display: block;
-	}
-	
-	div.format_desktop {
-		display: none;
-	}
-	
-	div.title_box {
-		width: 80%;
-	}
+@media only screen and (max-width: 1024px) {
+
 }
