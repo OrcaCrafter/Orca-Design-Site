@@ -14,6 +14,20 @@ p.sub {
 	font-style: italic;
 }
 
+h2 {
+	background-color: rgba(0, 0, 0, 0.25);
+	padding: 10px;
+	padding-left: 15px;
+	border-radius: 5px;
+}
+
+h3 {
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 5px;
+	padding-left: 10px;
+	border-radius: 2px;
+}
+
 model-viewer {
 	background: rgb(32, 32, 32);
 }

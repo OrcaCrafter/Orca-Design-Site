@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>CTF Overhaul | Orca Design</title>
+	<link rel="stylesheet" href="/css/general.css" />
+	<link rel="stylesheet" href="/css/project.css" />
+	<link rel="stylesheet" href="/css/carousel.css" />
+	<link rel="icon" type="image/x-icon" href="/style_elements/profile_pic.ico">
+	<script src="/js/path.js"></script>
+	<script src="/js/copy.js"></script>
+	<script src="/js/carousel.js" defer></script>
+	<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+
+	<!-- Snippet -->
+	<div hidden>
+		<div class="snippet" id="snippet">
+			<p>
+				<b style="font-size: 20px" aria-hidden="true">Capture the Flag Overhaul<br></b>
+			</p>
+			<img class="thumbnail" src="/style_elements/thumbnails/tf2/IMAGE.png" alt="NAME">
+		</div>
+	</div>
+</head>
+<body>
+	<div id=header></div>
+	
+	<div class="content">
+		<h2>Capture the Flag Overhaul</h2>
+		<a href="">Download the gamemode library</a>
+
+		<a href="#flag-locking">Flag Locking</a> <a href="#kotf">King of the Flag</a> <a href="#5flag">Five Flag</a>
+
+		<h3 id="flag-locking">Flag Locking</h3>
+		<p>This is a description</p>
+		<h4>Implementation</h4>
+		<pre>TODO Implementation</pre>
+
+		<h3 id="kotf">King of the Flag</h3>
+		<p>This is a description</p>
+		<h4>Implementation</h4>
+		<pre>/pages/lists/tf2.html</pre>
+
+		<h3 id="5flag">Five Flag</h3>
+		<p>This is a description</p>
+		<h4>Implementation</h4>
+		<pre>TODO Implementation</pre>
+		
+	<script>
+		CopyElementByID('/html/header.html', '#header', '#header').then(() => {
+			BuildPaths([
+				{file: "/index.html", name:"Home"},
+				{file: "/pages/lists/project_list.html", name:"Projects"},
+				{file: "/pages/lists/mods.html", name:"Home"},
+				{file: "/pages/lists/mods/tf2.html", name:"TF2 Mods"}
+			]);
+		});		
+	</script>
+</body>
+</html>
