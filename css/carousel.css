@@ -7,6 +7,10 @@
     position: relative;
 }
 
+.carousel img {
+    max-width: 100%;
+}
+
 .carousel ul {
     list-style-type: none;
 }

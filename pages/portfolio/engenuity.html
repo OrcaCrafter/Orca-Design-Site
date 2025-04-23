@@ -27,19 +27,19 @@
 	
 	<div class="content">
 		<h2>About Engenuity</h2>
-	<p>Engenuity is a 2d/3d game engine made using the Light Weight Java Game Library (LWJGL), with inspiration
+	<p>Engenuity is a 2d/3d game engine made using the <a href="https://www.lwjgl.org/">Light Weight Java Game Library</a> (LWJGL), with inspiration
 	from the frameworks used for the Unity and Source game engines. The engine started out as a way to condense
 	and streamline utilities for several other projects I was working on. It's roots can be traced to an early
 	project that used Processing's core library. While processing is useful for quick prototypes, the render
 	pipeline (built on Java's AWT) wasn't able to support several of my needs. So I replaced Processing with
 	LWJGL and its OpenGL rendering pipeline.</p>
-	<h3>Projects Using Engenuity</h3>
+	<h3>Projects & Examples Using Engenuity</h3>
 		<div class="carousel" style="background: darkgray; min-height: 200px;" data-carousel>
 			<button class="carousel-button prev" data-carousel-button=-1>&#8656;</button>
 			<button class="carousel-button next" data-carousel-button=1>&#8658;</button>
 			<ul data-slides>
 				<li class="slide" data-active>
-					<h3>Slide 1</h3>
+					<h3>Cubic Ray Marching</h3>
 					<p>Text</p>
 					<img src="/style_elements/profile_pic.jpg">
 				</li>
@@ -56,9 +56,7 @@
 		CopyElementByID('/html/header.html', '#header', '#header').then(() => {
 			BuildPaths([
 				{file: "/index.html", name:"Home"},
-				{file: "/pages/lists/project_list.html", name:"Projects"},
-				//{file: "/pages/lists/mods.html", name:"Home"},
-				//{file: "/pages/lists/MOD_GROUP.html", name:"Projects"}
+				{file: "/pages/lists/project_list.html", name:"Projects"}
 			]);
 		});		
 	</script>
