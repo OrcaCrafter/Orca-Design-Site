@@ -44,6 +44,8 @@ div.project-preview {
 	border-color: gray;
 	margin: 25px;
 
+	min-height: 250px;
+
 	transition-duration: 100ms;
 
 	box-shadow:
