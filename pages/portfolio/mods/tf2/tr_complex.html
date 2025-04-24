@@ -29,169 +29,175 @@
 	
 	<div class="content">
 		<h2>Training Complex</h2>
-		<p>TR Complex is a fan made practice / tutorial map for Team Fortress 2</p>
-
-		<h3>Gamemode</h3>
-		<p>The TR prefix in TF2 is reserved for 'training' or 'tutorial' maps, with the base game having 2
-		training maps,
-		<a href = "https://wiki.teamfortress.com/wiki/Target">tr_target</a> and
-		<a href = "https://wiki.teamfortress.com/wiki/Dustbowl_(Training)">tr_dustbowl</a>.
-		The later is a modified version of
-		<a href = "https://wiki.teamfortress.com/wiki/Dustbowl">cp_dustbowl</a>,
-		with added game logic to show players the basics of round setup, capturing points,
-		engaging with medics and engineer buildings. While giving new players a chance to
-		play the game with no stakes is good, the scope is very limited. The game forces you
-		to play as soldier, you can only join offense and you cannot use un-lockable weapons.
-		The former focuses on learning the basics of controls and has explanations for more niche
-		mechanics, but it is still lacking. As the name suggests, it is themed after a target range,
-		complete with pop-up wood targets. The map follows a very linear scripted sequence, waiting
-		for the player to complete a basic task before prompting them to move on. Initially you can
-		only play it as soldier, where you learn the basics of movement and using you weapons.
-		Once completed, re-entry as demoman is enabled. This version of the map starts you
-		at the shooting range, an primarly focuses on demo's most important weapon, the
-		sticky bomb launcher. Once completed you can play it again as spy, arguably the most
-		complicated class. This teaches you the basics of cloaking, sapping, disguising and
-		backstabbing. Because of spy's steath based gameplay, every player needs to be aware
-		of what a spy could be doing, regardless of if they know there is one or not. Lastly
-		there is the engineer tutorial. Engineer can place buildings that assist their team, and
-		this tutorial walks through the basics of all 4 builds, and how you can interact with them.</p>
-		<p>Over all, the existing tutorial maps are decent, but they are easy to criticize.
-		Especially when their lack of scope is compared to the seemingly unlimited skill ceiling
-		of TF2, and the great lengths other valve titles go to avoid players even noticing they
-		are in the tutorial. I think a major factor for why it ended up this way was because
-		the TF2 developers were making a tutorial for only their game. These maps where released
-		with the Mac Update which, as the title suggests, was an update adding official support
-		for TF2 on Apple's MacOS operating system. This gave many more players access to one
-		of the first FPS (First person shoot), nearly exactly one year before the game became free.
-		Though now, as free FPS games common place, many still play TF2. Now the game doesn't act
-		as a easy introduction to the genre, but instead as home for many players who have spent most
-		of the over 15 year life span perfecting their skills. For a new player, joining
-		a match can be too chaotic of an experience to learn the skills needed to make it to
-		the objectives, much less be successful. That why I started working on TR Complex, a new
-		training map that doesn't replace the older maps functionality, but instead attempts
-		to organically teach new players what it is like to play TF2 at their own pace.</p>
-		<p>The central thesis of the map is 'How can a tutorail for a game as complicated as TF2,
-		be kept as organic as a portal or halflife game'. The concept I came up with was to give
-		the player a broad task (Reach this location / kill these bots) and then give them a
-		quantifiable, yet vague, metric for how they did. By designing the map around the
-		objective with specific mechanics in mind, an player who experiments would naturally
-		discover new mechanics and concepts. I settled on a rank system (similar to the
-		casual ranks), with a score for each class in each objective. The objectives I decided to
-		use to represent the entire game were: Basic Weapon Use, 1v1 Skirmish, Roll outs (reaching the
-		objective from spawn), Defending from Attackers, Pushing an Objective and Supporting Teamates.
-		By having the system be tiered, new players can aim for a basic threshold in all categories,
-		while advanced players can try to optimize every detail.</p>
-		
-		<h2>Map Objectives</h2>
-		<h3>Fundamentals</h3>
-		<h3>Basic Weapon Use</h3>
-		<p>The basic weapon use objective is found closest to the spawn room, and consists of
-		a shooting range (much like tr_target) to practice aim, reaction speed and ammo management.
-		Unlike tr_target, this room won't focus on explaining the mechanics of each weapon, but
-		instead will adapt to the class the player is using, and give objective that focus on
-		both the strength and weaknesses of the class. For example sniper, a long range class, would
-		have distant targets, interspersed with occasional targets that punish tunnel vision. Overall
-		the score would be based on accuracy percentage and time to kill.</p>
-		<h3>1v1 Skirmish</h3>
-		<p>The 1v1 skirmish area is found near the basic weapon use area, and is a fenced off
-		area on the roof of the complex. As the name suggests, a single bot can be found there,
-		and your goal is to kill them, before they kill you. One round of 1v1 has you face the
-		5 classic skirmish classes (Scout, Soldier, Pyro, Demo and Heavy), and ranks you on total
-		damage taken, the time it took to kill them and how many times you died.</p>
-		<h3>Rollouts</h3>
-		<p>The rollouts course takes up by far the most space of any objective, spanning from a
-		large room at the bottom of the complex, to a small area at the top. A flank route the
-		goes outside the complex also exists. Players must travel from a spawn room in the bottom area
-		to the top as fast as possible, while preserving health and ammo. Dying resets the rollout.
-		Instead of directly scoring the player on their stats, upon arriving at the object a wave of
-		bots is spawned. The score is based on how many of the bots could be delt with, how fast the bots
-		were killed, and how fast the player reached the end. This more complicated system appropriatly
-		punishes weapons that are great for rollout, but harm a players ability to fight, such as gunboats,
-		the GRU and other mobility aids. To enforce more creativity, there is a bottleneck along the
-		path in the form of a gate on the main path that only opens after a certain amount of time.
-		However, this can be avoided by utilizing the geometry or a better choice of weapons.</p>
-		<h3>Defending from Attackers</h3>
-		<p>This objective is heavily inspired by the existing community made map
-		<a href = "https://gamebanana.com/mods/74812">tr_walkway</a>. This map sends wave after wave
-		of bots down the titular walkway, allowing for the player to practice aim on more complicated
-		targets. To focus the objective more on defense, the bots will use pathfinding similar to
-		Mann vs Machine, the PVE gamemode in TF2. The score would be TODO
+		<p>
+			Team Fortress 2's tutorials struggle to teach a modern audience about the game. Its tutorials
+			<a href = "https://wiki.teamfortress.com/wiki/Target">tr_target</a> and
+			<a href = "https://wiki.teamfortress.com/wiki/Dustbowl_(Training)">tr_dustbowl</a>.
+			(The later is a modified version of
+			<a href = "https://wiki.teamfortress.com/wiki/Dustbowl">cp_dustbowl)</a>,
+			focus on the basics of a first person shooter. These maps only cover 4 of the nine classes,
+			with soldiers having 2 sections, both of which focus on unversal game mechanics. These tutorials
+			where likely made with an inexperiences audience in mind. They were realeased when the game made
+			avaliable on Apple's MacOS, and only a year before the game when free-to-play.
 		</p>
-		<h3>Pushing the Objective</h3>
-		<h3>Supporting Teamates</h3>
+		<p>
+			Training complex aims to teach a more versed audience about the newances of Team Fortress 2's
+			mechanics in a way that engages the player, and encurages discovery, over lecture. Therefore,
+			the map is built to provide challenges to the players, and reward the utilization of class 
+			specific mechanics. A section does exist for the basics mechanics, but this acts a very brief
+			skippable introduction.
+		</p>
+		<p>
+			The complex itself is broken down into several sections, each one focusing on a different facet
+			of gameplay.
+		</p>
+		<style>
+			.link-box {
+				background: rgb(64 64 64);
+				padding: 10px;
+				border-radius: 10px;
+				display: flex;
+			}
 
-		<h3>3D Preview</h3>
+			.section-link {
+				margin-left: 5px;
+				margin-right: 5px;
+				
+				display: block;
+				background: darkgray;
+				border-radius: 5px;
+				padding: 5px;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+
+			.section-link:focus,
+			.section-link:hover {
+				text-decoration: underline;
+			}
+
+			.section {
+				display: flex;
+			}
+
+			.section-text {
+				width: 75%;
+				margin-right: 25px;
+			}
+
+			.section-img {
+				width: 25%;
+			}
+		</style>
+		<div class="link-box">
+			<a class="clean section-link" href="#basic">
+				Fundamentals / Basic Weapon Use
+			</a>
+			<a class="clean section-link" href="#1v1">
+				1v1 Skirmish
+			</a>
+			<a class="clean section-link" href="#rollout">
+				Rollouts
+			</a>
+			<a class="clean section-link" href="#walkway">
+				Defending from Attackers
+			</a>
+			<a class="clean section-link" href="#objective">
+				Objective simulator
+			</a>
+			<a class="clean section-link" href="#3d">
+				3D Model
+			</a>
+		</div>
+
+		<h3 id="basic">Fundamentals / Basic Weapon Use</h3>
+		<div class="section">
+			<div class="section-text">
+				<p>The basic weapon use objective is found closest to the spawn room, and consists of
+				a shooting range (much like tr_target) to practice aim, reaction speed and ammo management.
+				Unlike tr_target, this room won't focus on explaining the mechanics of each weapon, but
+				instead will adapt to the class the player is using, and give objective that focus on
+				both the strength and weaknesses of the class. For example sniper, a long range class, would
+				have distant targets, interspersed with occasional targets that punish tunnel vision. Overall
+				the score would be based on accuracy percentage and time to kill.</p>
+			</div>
+			<img class="section-image" src="/style_elements/photos/tf2/tr_complex/range.png"></img>
+		</div>
+		<h3 id="1v1">1v1 Skirmish</h3>
+		<div class="section">
+			<div class="section-text">
+				<p>
+					The 1v1 skirmish area is found near the basic weapon use area, and is a fenced off
+					area on the roof of the complex. As the name suggests, a single bot can be found there,
+					and your goal is to kill them, before they kill you. One round of 1v1 has you face the
+					5 classic skirmish classes (Scout, Soldier, Pyro, Demo and Heavy), and ranks you on total
+					damage taken, the time it took to kill them and how many times you died.
+				</p>
+			</div>
+			<img class="section-image" src="/style_elements/photos/tf2/tr_complex/1v1.png"></img>
+		</div>
+
+
+
+		<h3 id="rollout">Rollouts</h3>
+		<div class="section">
+			<div class="section-text">
+				<p>
+					The rollouts course takes up by far the most space of any objective, spanning from a
+					large room at the bottom of the complex, to a small area at the top. A flank route the
+					goes outside the complex also exists. Players must travel from a spawn room in the bottom area
+					to the top as fast as possible, while preserving health and ammo. Dying resets the rollout.
+					Instead of directly scoring the player on their stats, upon arriving at the object a wave of
+					bots is spawned. The score is based on how many of the bots could be delt with, how fast the bots
+					were killed, and how fast the player reached the end. This more complicated system appropriatly
+					punishes weapons that are great for rollout, but harm a players ability to fight, such as gunboats,
+					the GRU and other mobility aids. To enforce more creativity, there is a bottleneck along the
+					path in the form of a gate on the main path that only opens after a certain amount of time.
+					However, this can be avoided by utilizing the geometry or a better choice of weapons.
+				</p>
+			</div>
+			<img class="section-image" src="/style_elements/photos/tf2/tr_complex/rollout.png"></img>
+		</div>
+
+
+		<h3 id="walkway">Defending from Attackers</h3>
+		<div class="section">
+			<div class="section-text">
+				<p>
+					This objective is heavily inspired by the existing community made map
+					<a href = "https://gamebanana.com/mods/74812">tr_walkway</a>. This map sends wave after wave
+					of bots down the titular walkway, allowing for the player to practice aim on more complicated
+					targets. To focus the objective more on defense, the bots will use pathfinding similar to
+					Mann vs Machine, the PVE gamemode in TF2. The score would be based on the difficulty of the kill
+					(airborne, long distance, stronger class), and the number of bots killed without one missed.
+				</p>
+			</div>
+			<img class="section-image" src="/style_elements/photos/tf2/tr_complex/walkway.png"></img>
+		</div>
+		
+		<h3 id="objective">Objective simulator</h3>
+		<div class="section">
+			<div class="section-text">
+				<p>
+					The objective simulator is a section of the map with the 3 main objective types featured in the game,
+					control points, capture the flag and payload, for both attacking and defending. After choosing which
+					of the 6 scenarois the player would like to play out, the objectives are configured and bots are spawned.
+					When defending, the goal is to out last the timer, with sub objectives and certain incriments. Addional
+					objectives relate to fighting back bots and discourage overly 'turtling' play styles. Offsensive
+					scenarios will naturally have completing the object as its main goal, with sub objectives for how close
+					the play got, and will discourage playstyles that are overly aggressive.
+				</p>
+			</div>
+			<img class="section-image" src="/style_elements/photos/tf2/tr_complex/objective.png"></img>
+		</div>
+
+
+		<h3 id="3d">3D Model</h3>
 		<model-viewer style="width:100%; height:40vw;" alt="Map Name"
-			src="/style_elements/models/scraper.glb"
+			src=""
 			shadow-intensity="1" camera-controls
 			touch-action="pan-y"
 		></model-viewer>
-
-		<h3>Image Carousel</h3>
-		<div class="carousel" style="background: darkgray; min-height: 200px;" data-carousel>
-			<button class="carousel-button prev" data-carousel-button=-1>&#8656;</button>
-			<button class="carousel-button next" data-carousel-button=1>&#8658;</button>
-			<style>
-				li img {
-					padding-top: 5px;
-					width: 100%;
-					max-height: 500px;
-					object-fit: cover;
-				}
-
-				p.sub {
-					transform: translateX(25px);
-				}
-			</style>
-			<ul data-slides>
-				<li class="slide" data-active>
-					<img src="/style_elements/profile_pic.jpg">
-					<p class="sub">Area Name</p>
-				</li>
-				<li class="slide">
-					<img src="/style_elements/background.png">
-					<p class="sub">Area Name</p>
-				</li>
-			</ul>
-		</div>
-
-		<h3>Custom Asset Carousel</h3>
-		<div class="carousel" style="background: darkgray; min-height: 200px;" data-carousel>
-			<button class="carousel-button prev" data-carousel-button=-1>&#8656;</button>
-			<button class="carousel-button next" data-carousel-button=1>&#8658;</button>
-			<style>
-				li model-viewer {
-					padding-top: 5px;
-					width: 100%;
-					height: 500px;
-					display:block;
-					z-index: 0;
-				}
-
-				p.sub {
-					transform: translateX(25px);
-				}
-			</style>
-			<ul data-slides>
-				<li class="slide" data-active>
-					<model-viewer alt="Scraper"
-						src="/style_elements/models/scraper.glb"
-						shadow-intensity="1" camera-controls
-						touch-action="pan-y"
-					></model-viewer>
-					<p class="sub">Model Name</p>
-				</li>
-				<li class="slide">
-					<model-viewer alt="Trays"
-						src="/style_elements/models/trays.glb"
-						shadow-intensity="1" camera-controls
-						touch-action="pan-y"
-					></model-viewer>
-					<p class="sub">Model Name</p>
-				</li>
-			</ul>
-		</div>
-	</div>
 
 	<script>
 		CopyElementByID('/html/header.html', '#header', '#header').then(() => {
