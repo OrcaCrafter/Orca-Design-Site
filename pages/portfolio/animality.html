@@ -27,26 +27,75 @@
 	<div id=header></div>
 	
 	<div class="content">
-		<h2>Project Title</h2>
+		<h2>Animality</h2>
+		Animality is an anthropomorphic social simulation game where you revitalize a failed city
+		through odd jobs and socializing.
 
-		<h3>Section title</h3>
-		<p>This is a description</p>
-
-
-		<h3>Example Carousel</h3>
+		<h3>Features</h3>
 		<div class="carousel" style="background: darkgray; min-height: 200px;" data-carousel>
 			<button class="carousel-button prev" data-carousel-button=-1>&#8656;</button>
 			<button class="carousel-button next" data-carousel-button=1>&#8658;</button>
 			<ul data-slides>
 				<li class="slide" data-active>
-					<h3>Slide 1</h3>
-					<p>Text</p>
-					<img src="/style_elements/profile_pic.jpg">
+					<h3>Sona3D (Character Creator)</h3>
+					<p>
+&ensp;&ensp;The character creator is planned to be realesed as the stand alone Sona3D.
+					</p>
+					<img src="/style_elements/photos/animality/cc.png">
 				</li>
 				<li class="slide">
-					<h3>Slide 2</h3>
-					<p>Text</p>
-					<img style="height: 50%; object-fit: cover;"src="/style_elements/background.png">
+					<h3>Dialogue System</h3>
+&ensp;&ensp;&ensp;Paragraph 1<br>
+&ensp;&ensp;&ensp;Paragraph End
+					<img src="/style_elements/photos/animality/wg.png">
+				</li>
+				<li class="slide">
+					<h3>Room Designer</h3>
+					<p>
+&ensp;&ensp;&ensp;The room designer is based on early doom and quake style level editors.
+These editors feature a top down view of the rooms. The floor and ceiling heights are
+modified for each convex 'sector'. Like later implentations of this concept, the floor and
+ceiling of each sector can be linearly sloped by adding a pair of refrence points. This
+information is used to build a mesh of each sector, and all the sector meshes are joined
+to make the entire interior. The room can now be designed with static or dynamic
+decorations.<br>
+&ensp;&ensp;&ensp;Static decorations are any props that do not adapt to their enviroment.
+The current plan for static prop decoration is to define a placement mesh for each prop
+added. This placement mesh will control how props can be place based on 3 simple rules.
+First, every bottom face must in contact with a valid top surface. Secondly, a valid top
+surface consists of a level room floor, or a marked top face of a prop. And lastly, the
+placement mesh for the prop must not intersect with any geometry.<br>
+&ensp;&ensp;&ensp;Dynamic decorations are for props that can change based on relevant data.
+Dynamic dectorations are defined by a script that is given a set of relevant key points.
+These key points are typically defined by other props in the scene. For example, a flag
+pole could define the attachment points for a flag. The flag could then scale itself based
+on the spacing of the flag pole key points. Fairy lights and other hanging details could
+be connected between a sequence of hooks. Power cables can run from outlets to devices.<br>
+					</p>
+					<img src="/style_elements/photos/animality/rd.png">
+				</li>
+				<li class="slide">
+					<h3>World Generation</h3>
+&ensp;&ensp;&ensp;The current world generation exists as a way to store a 3d tile map
+as a texture. The system current supports static tiles, tiles effected by their neighbors
+and tiles that use the dual grid system. This system should be scalable for several
+outdoors features. Proceedural generation could be used to create the starting condition
+of the map, and a 2d version of marching cubes could be added for more structure.<br>
+&ensp;&ensp;&ensp;The current system being based on a texture is rather clunky, so a
+custom file format is definitely planned. 
+					<img src="/style_elements/photos/animality/wg.png">
+				</li>
+				<li class="slide">
+					<h3>Inventory System</h3>
+&ensp;&ensp;&ensp;Paragraph 1<br>
+&ensp;&ensp;&ensp;Paragraph End
+					<img src="/style_elements/photos/animality/book.png">
+				</li>
+				<li class="slide">
+					<h3>Book Library</h3>
+&ensp;&ensp;&ensp;Paragraph 1<br>
+&ensp;&ensp;&ensp;Paragraph End
+					<img src="/style_elements/photos/animality/wg.png">
 				</li>
 			</ul>
 		</div>
@@ -56,9 +105,7 @@
 		CopyElementByID('/html/header.html', '#header', '#header').then(() => {
 			BuildPaths([
 				{file: "/index.html", name:"Home"},
-				{file: "/pages/lists/project_list.html", name:"Projects"},
-				//{file: "/pages/lists/mods.html", name:"Mods"},
-				//{file: "/pages/lists/MOD_GROUP.html", name:"Projects"}
+				{file: "/pages/lists/project_list.html", name:"Projects"}
 			]);
 		});		
 	</script>

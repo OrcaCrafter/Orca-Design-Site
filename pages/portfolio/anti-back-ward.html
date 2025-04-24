@@ -34,11 +34,76 @@
 	<div id=header></div>
 	
 	<div class="content">
-		<a href="/pages/games/index.html" class="clean">
-			<div class="button">
-				Play The Game Here!
-			</div>
-		</a>
+		<style>
+			.title-box {
+				height: 75px;
+			}
+
+			.abw-title {
+				float: left;
+				width: calc(100% - 300px);
+				max-height: 75px;
+				max-width: 487.5px;
+
+				filter: drop-shadow(rgba(0, 0, 0, 0.5) 5px 5px 2px)
+			}
+
+			@media (max-width: 1000px) {
+				.abw-title {
+					width: 100%;
+				}
+
+				.play-button {
+					left: 0px;
+				}
+
+				.title-box {
+					height: 150px;
+				}
+			}
+
+			.play-button {
+				width: 250px;
+				max-width: calc(100vw - 50px);
+
+				float: right;
+				height: 50px;
+				margin: 5px;
+				padding: 10px;
+				border-radius: 10px;
+				font-size: 25px;
+				text-align: center;
+
+				color: darkblue;
+
+				background-color: green;
+				box-shadow: 0px 0px 10px 0px black inset;
+				border: black 4px solid;
+			}
+
+			.play-button:focus,
+			.play-button:hover {
+				background-color: rgb(64 192 64);
+				box-shadow: 0px 0px 10px 0px darkgreen inset;
+				border: darkgreen 4px solid;
+			}
+
+			.play-button div {
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+			
+		</style>
+
+		<div class="title-box">
+			<img class="abw-title pixel-art" src="/style_elements/photos/abw/title.png" alt="Anti-Back-Ward Title">
+			<a href="/pages/games/index.html" class="clean">
+				<div class="play-button">
+					<div>Play The Game Here!</div>
+				</div>
+			</a>
+		</div>
 		
 		
 		<h2>About Anti-Back-Ward</h2>
@@ -46,16 +111,28 @@
 			Anti-Back-Ward is a 2d puzzle platformer made by myself, with assets created by my friends,
 			for the 2023 GMTK <a href="https://www.youtube.com/channel/UCqJ-Xo29CKyLTjn6z2XwYAw" target="_blank" rel="noopener noreferrer">(Game Makers Tool Kit)</a> Game Jam.
 			You play as a white cat in a surrealist looping world, trying to get to a floating mirror and progress to the next level.
+			</p>
+			<h2>Gameplay</h2>
+			<p>
+			Anti-Back-Ward's core gameplay boils down to navigating to the levels objective (a small floating mirror),
+			and collecting the optional coins along the way. In order to traverse the levels you have to utilize basic
+			2d platforming, the purple mirror dimension tiles, and navigate around the green blockers.
+			</p>
+			<p>
 			Throughout the levels you can find pink / magenenta platforms. When standing on these platforms and activating
 			your special ability, they start looping (in a mirrored fasion) aswell. These are called the mirror portals,
 			and they make up the majority of the puzzle aspect. While they are active, you can only interact with
 			them, and a few other objects. If your move is used again, the mirror portal closes, potentially killing you
-			or letting you interact with a new portal in a new place. --Note: Clean this up. Move gameplay to later
+			or letting you interact with a new portal in a new place.
 			</p>
-			<h2>Gameplay</h2>
-			<!-- TODO Describe ABW Gameplay -->
 		<h2>Theming</h2>
-			<!-- TODO Describe ABW Theming -->
+			The theming of the game leans towards abstract. The music (Made by
+			<a href="https://www.youtube.com/@jifyrex1217/">Jifyrex</a>) is a slow, surreal track, while the art
+			(Made by <a href="https://www.twitch.tv/codexcracked/"></a>) is predominently mute tones, with select
+			highlights. These highlights are reserved for mirror platforms (purple and magenta), the end goal and 
+			pickups (gold and cyan), and the blocker enemies (dark green). The background consists of abstract
+			gray, light gray and near white patterns using a small selection of tiles. Theses patterns hint at how
+			the level can be peices together.
 		<h2>Level Design</h2>
 			<div class="carousel" style="background: darkgray; min-height: 200px;" data-carousel>
 				<button class="carousel-button prev" data-carousel-button=-1>&#8656;</button>
@@ -109,18 +186,39 @@
 					</li>
 					<li class="slide">
 						<h3>Level 7</h3>
-						<p>TODO Level 7</p>
+						<p>Level 7 requires an understanding of all the mechanics, and forces the player
+							to unwravel the intended solution. The puzzle is solved by using the mirror dimension
+							and screen wrapping to reach platforms you otherwise couldn't, in order to cleare the
+							area with the end goal.
+						</p>
 						<img src="/style_elements/photos/abw/level7.png" alt="Level 7">
 					</li>
 					<li class="slide">
 						<h3>Level 8</h3>
-						<p>TODO Level 8</p>
+						<p>Level 8 acts as a send off to the mirror mechanic. It features the most
+							mirror sections, but each one only opens up access to a few nearby locations.
+							The challenge of this level is not from peicing together mechancis, but instead
+							by understanding them well enough to not get caught out.
+						</p>
 						<img src="/style_elements/photos/abw/level8.png" alt="Level 8">
 					</li>
 				</ul>
 			</div>
-		<div style="display: flex; flex: 1 1 255px">
-			<div style="min-width: 250px">
+		<style>
+			.abw-footer {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.abw-footer > div {
+				min-width: 250px;
+				flex: 1 0 250px;
+				padding-left: 10px;
+				padding-right: 10px;
+			}
+		</style>
+		<div class="abw-footer">
+			<div>
 				<h2>Links</h2>
 					<p>Game Jam Version</p>
 					<a href = "https://orcacrafter.itch.io/antibackward">&#149; Itch.io</a> | <a href = "https://github.com/OrcaCrafter/Anti-Back-Ward-Unity/tree/Legacy">Github</a><br>
@@ -129,12 +227,12 @@
 					<p>Java Refactor</p>
 					<a href = "https://orcacrafter.itch.io/antibackward-java">&#149; Itch.io</a> | <a href = "https://github.com/OrcaCrafter/Anti-Back-Ward-Java">Github</a><br>
 			</div>
-			<div style="min-width: 250px">
+			<div>
 				<h2>Credits</h2>
 					<p><a href = "https://www.twitch.tv/codexcracked/">&#149; Art by CodexCracked</a></p>
 					<p><a href = "https://www.youtube.com/@jifyrex1217/">&#149; Music by Jifyrex</a></p>
 			</div>
-			<div style="min-width: 250px">
+			<div>
 				<h2>Change Log</h2>
 				<table style="width:100%; text-align:top">
 					<tr>

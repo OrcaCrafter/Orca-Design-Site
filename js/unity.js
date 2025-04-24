@@ -36,6 +36,7 @@ function SetupUnityGame (info) {
     // way that non-critical warnings and error messages are presented to the
     // user.
     function unityShowBanner(msg, type) {
+
         function updateBannerVisibility() {
             warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
         }
