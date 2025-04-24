@@ -34,6 +34,24 @@
 	project that used Processing's core library. While processing is useful for quick prototypes, the render
 	pipeline (built on Java's AWT) wasn't able to support several of my needs. So I replaced Processing with
 	LWJGL and its OpenGL rendering pipeline.</p>
+
+		<h3>Engine Structure</h3>
+		<h3>Input Handling</h3>
+		<h3>Audio</h3>
+		<h3>Mod Loading / Modular design</h3>
+		<h3>Misc Primary Features</h3>
+		<h4 style="padding-left:50px">JSON Parsing</h4>
+		<h4 style="padding-left:50px">Math Library</h4>
+		<h4 style="padding-left:50px">Memory Handling</h4>
+		<h3>Rendering</h3>
+		<h4 style="padding-left:50px">2D Rendering</h4>
+		<h4 style="padding-left:50px">3D Rendering</h4>
+		<h4 style="padding-left:50px">Shaders</h4>
+		<h4 style="padding-left:50px">Text</h4>
+		<h3>Tertiary features</h3>
+		<h4 style="padding-left:50px">Tile Maps</h4>
+		<h4 style="padding-left:50px">Inventory</h4>
+		<h4 style="padding-left:50px">Generation</h4>
 	<h3>Projects & Examples Using Engenuity</h3>
 		<div class="carousel" style="background: darkgray; min-height: 200px;" data-carousel>
 			<button class="carousel-button prev" data-carousel-button=-1>&#8656;</button>
@@ -41,18 +59,35 @@
 			<ul data-slides>
 				<li class="slide" data-active>
 					<h3>Cubic Ray Marching</h3>
-					<p></p>
-					<img src="/style_elements/profile_pic.jpg">1
+					<div style="width:50%; float:left">
+						<p>
+							Cubic ray marching is a variation of classic ray marching, but using rectilinear distance, instead
+							of classic euclidian distance. This means the distance a ray can travel in each step is a cube,
+							instead of a sphere. In theory, cubic ray marching can be more preformative than classic ray marching.
+							This is because cubic ray marching can avoid the costly square root function, and converges on intersections
+							(specifically with flat planes) faster.
+						</p>
+						<p>
+							The implemention made in Engenuity uses the shader and window tools, with the actual marching cubes
+							algorithm being written in <a href="https://en.wikipedia.org/wiki/OpenGL_Shading_Language">GLSL</a>.
+						</p>
+					</div>
+					<img style="width: 50%; object-fit: cover; float:right"src="/style_elements/photos/engenuity/cubic-ray-marching.png">
 				</li>
 				<li class="slide">
 					<h3><a href="dueling_dungeons.html">Dueling Dungeons</a></h3>
-					<p>Text</p>
-					<img style="height: 50%; object-fit: cover;"src="/style_elements/thumbnails/dueling_dungeons.png">
+					<p style="width:50%; float:left">
+						Dueling Dungeons has been developed along side engenuity, with most of the modular entites, multiplayer
+						and tile map systems being developed specifically for Dueling Dungeons.
+					</p>
+					<img style="width: 50%; object-fit: cover; float:right"src="/style_elements/thumbnails/dueling_dungeons.png">
 				</li>
 				<li class="slide">
 					<h3><a href="pictile.html">Pictile</a></h3>
-					<p>Text</p>
-					<img style="height: 50%; object-fit: cover;"src="/style_elements/thumbnails/pictile.png">
+					<p style="width:50%; float:left">
+						Pictile uses engenuity for its windows, audio and mod loading support.
+					</p>
+					<img style="width: 50%; object-fit: cover; float:right"src="/style_elements/thumbnails/pictile.png">
 				</li>
 			</ul>
 		</div>
