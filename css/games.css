@@ -111,13 +111,13 @@ div.game-list {
 
 div.snippet {
 	margin: 0;
+	height: 250px
 }
 
 div.snippet p {
 	width: 66%;
 	float: left;
 	margin-left:2.5%;
-	height: 250px;
 }
 
 /* Fullscreen utility */
@@ -168,8 +168,12 @@ button.close-game:hover {
 /* Image formatting */
 
 img.full_thumbnail {
-	height: 250px;
-	object-fit: cover;
+	width: 100%;
+	max-height: 100%;
+	object-fit: contain;
+
+	top: 50%;
+	transform: translateY(-50%);
 }
 
  /* Functional */

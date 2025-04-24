@@ -16,6 +16,12 @@ a:not(.clean):hover {
     text-decoration: underline;
 }
 
+.pixel-art {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
 pre {
     font-family: monospace;
     background: rgb(64 64 64);
