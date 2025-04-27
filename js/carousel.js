@@ -1,5 +1,4 @@
 
-
 const buttons = document.querySelectorAll("[data-carousel-button]");
 
 buttons.forEach(button => {
@@ -25,6 +24,13 @@ buttons.forEach(button => {
 
         slides.children[newIndex].dataset.active = true;
         delete activeSlide.dataset.active;
+
+        //Enable any model viewers now
+        modelViewers = slides.children[newIndex].querySelectorAll("model-viewer");
+
+        for (modelViewer of modelViewers) {
+            modelViewer.dismissPoster();
+        }
     });
 });
 
