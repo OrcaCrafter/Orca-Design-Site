@@ -1,15 +1,15 @@
 
-function SetupListPage (listSource, ...steps) {
+async function SetupListPage (listSource, ...steps) {
 
-    CopyElementByID('/html/header.html', '#header', '#header').then(() => {
+    const copyHeaderPromise = CopyElementByID('/html/header.html', '#header', '#header').then(() => {
         BuildPaths(steps);
     });
 	
-	CopyElementByID(listSource, "#project-list", "#projects").then(() => {
+	const copyListPromise = CopyElementByID(listSource, "#project-list", "#projects").then(() => {
         //Get all listed previews
-		const previews = document.querySelectorAll("div.preview");
-
         const list = document.getElementById("project-list");
+
+        const previews = list.querySelectorAll("div.preview");
 
         //Iterate
 		for (var i = 0; i < previews.length; i++) {
@@ -24,7 +24,7 @@ function SetupListPage (listSource, ...steps) {
             link.setAttribute("href", source);
             link.setAttribute("rel", "noopener noreferrer");
 
-            link.appendChild(preview);
+            link.appendChild(preview.cloneNode(true));
             
             //Wrap link in div
             var div = document.createElement('div');
@@ -38,22 +38,27 @@ function SetupListPage (listSource, ...steps) {
 
             div.appendChild(link);
 
-            //Add div to list
-            list.appendChild(div);
+            //Swap preview with properly formatted div
+            preview.replaceWith(div);
            
             //Populate link snippets
-			CopyElement(source, '#snippet', preview).then(() => {
+			CopyElement(source, '#snippet', link).then(() => {
 				//console.log('Header copied successfully!');
 			}).catch((error) => {
-				console.error('Failed to copy header:', error);
+				console.error('Failed to copy preview:', error);
 			});
 		
 		}
 	}).catch((error) => {
 		console.error('Failed to copy projects:', error);
 	});
-	
-	
+
+    try {	
+        await Promise.all([copyHeaderPromise, copyListPromise]);
+        return new Promise((resolve, reject) => {resolve()});
+    } catch (error) {
+        throw error;
+    }
 }
 
 

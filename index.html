@@ -13,16 +13,22 @@
     <title>Portfolio | Orca Design</title>
 	<link rel="stylesheet" href="/css/general.css"/>
     <link rel="stylesheet" href="/css/home.css"/>
+	<link rel="stylesheet" href="/css/carousel.css"/>
     <link rel="icon" type="image/x-icon" href="/assets/profile_pic.ico">
     <script src="/js/copy.js"></script>
+	<script src="/js/list.js"></script>
 	<script src="/js/path.js"></script>
 </head>
 <body id="wip">
 	
 	<div id="header"></div>
-	<header>
-		
-	</header>
+
+	<div  style="margin-left:50px; margin-right:50px">
+		<h2>
+			Highlighted Projects
+		</h2>
+		<div id="projects"></div>
+	</div>
 
 	<a href="/pages/lists/project_list.html" class="clean">
 		<div class="home-tab">
@@ -55,7 +61,12 @@
 	</a>
 </body>
 <script>
-	CopyElementByID('/html/header.html', '#header', '#header');
+	//CopyElementByID('/html/header.html', '#header', '#header');
+	SetupListPage('/html/lists/highlight.html').then(() => {
+		var script = document.createElement('script');
+		script.src = '/js/carousel.js';
+		document.body.appendChild(script);
+	})
 </script>
 
 </html>

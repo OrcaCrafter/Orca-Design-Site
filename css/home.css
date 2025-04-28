@@ -14,6 +14,13 @@ h1 {
     font-size: 52px;
 }
 
+h2 {
+	background-color: rgba(0, 0, 0, 0.25);
+	padding: 10px;
+	padding-left: 15px;
+	border-radius: 5px;
+}
+
 p {
     font-family: helvetica;
     font-size: 20px;
@@ -136,4 +143,102 @@ div.home-tab:hover div.slider {
     display: block;
     
     width: 0;
+}
+
+
+
+/*
+    Highlight Preview Formatting
+*/
+
+div.project-preview {
+	border-width: 10px;
+	border-style: outset;
+	border-radius: 10px 0px 10px 0px;
+	border-color: gray;
+	margin: 25px;
+
+	min-height: 250px;
+
+	transition-duration: 100ms;
+
+	box-shadow:
+		inset 0px 0px 0px 5px rgb(64, 64, 64),
+		2px 2px 5px 5px rgba(0, 0, 0, 0.5),
+		/* This is a terrible way to do the background */
+		inset 0px 0px 0px 100vh darkslategray;
+}
+
+div.project-preview:hover {
+	scale: 101%;
+}
+
+div.project-preview * {
+	position: relative;
+	z-index: 1;
+}
+
+div.project-preview a {
+	display: block;
+    height: 100%;
+    width: 100%;
+	z-index: 10;
+}
+
+div.project-preview::after {
+	content: "";
+  	clear: both;
+  	display: table;
+}
+
+div.project-preview-text {
+	color: white;
+	font-family: helvetica;
+	font-size: 24px;
+}
+
+div.project-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Snippet Formatting */
+
+div.snippet {
+	margin: 0;
+	max-height: 250px;
+	min-height: 250px;
+}
+
+div.snippet p {
+	width: 66%;
+	float: left;
+	margin-left:2.5%;
+	height: 100%;
+}
+
+/* Image formatting */
+
+/* 1 image on the right */
+img.thumbnail {
+	float: right;
+	width: 30%;
+	height: 250px;
+	object-fit: cover;
+}
+/*  
+ *  |-----------------|
+ *  |        A        |
+ *  |-----------------|
+ */ 
+
+img.thumbnail_logo {
+	position: absolute;
+	right: 0px;
+	left: auto;
+	margin-right: 10px;
+	max-width: 50%;
+	max-height: 250px;
+	margin-top: 125px;
+	transform: translateY(-50%);
 }
