@@ -2,6 +2,10 @@
  *  Used for everything else
  */ 
 
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
 /* Remove link styling */
 a.clean {
 	text-decoration: inherit;
