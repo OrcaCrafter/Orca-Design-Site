@@ -5,7 +5,22 @@
 	<style>
 		#project-list {
 			min-height: 250px;
-			background-color: gray;
+			background-color: skyblue;
+			border-radius: 25px;
+			
+			border-color: rgb(15, 37, 37);
+			border-width: 5px;
+			border-style: solid;
+		}
+
+		.multi-slide {
+			display: flex;
+		}
+
+		.multi-slide > * {
+			display: flex;
+			flex: 1 1 auto;
+			width: 0;/*IDK why this works*/
 		}
 	</style>
 	<button class="carousel-button prev" data-carousel-button=-1>&#8656;</button>
@@ -16,6 +31,12 @@
 		</li>
 		<li class="slide">
 			<div class="preview" src="/pages/portfolio/dueling_dungeons.html"></div>
+		</li>
+		<li class="slide">
+			<div class="multi-slide">
+				<div class="preview" src="/pages/portfolio/mods/tf2/ctf_2freak.html"></div>
+				<div class="preview" src="/pages/portfolio/mods/tf2/tr_complex.html"></div>
+			</div>
 		</li>
 	</ul>
 </div>

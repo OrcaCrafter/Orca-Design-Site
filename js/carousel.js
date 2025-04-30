@@ -25,6 +25,21 @@ buttons.forEach(button => {
         slides.children[newIndex].dataset.active = true;
         delete activeSlide.dataset.active;
 
+        //Slide the current slide off screen
+        activeSlide.style.transform = `translateX(${-100 * offset}%)`
+
+        //Disable transition
+        transition = slides.children[newIndex].style.transition;
+        slides.children[newIndex].style.transition = 'none';
+
+        //Move to correct spot
+        slides.children[newIndex].style.transform = `translateX(${100 * offset}%)`;
+        slides.children[newIndex].offsetHeight;
+
+        //Re-enable transition and move to center
+        slides.children[newIndex].style.transition = transition;
+        slides.children[newIndex].style.transform = 'translateX(0)'
+
         //Enable any model viewers now
         modelViewers = slides.children[newIndex].querySelectorAll("model-viewer");
 
