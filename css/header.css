@@ -132,6 +132,8 @@ div.profile_box {
 
 	/*Animates the expansions over 100ms*/
 	transition: width 100ms ease-in-out;
+
+	overflow: hidden;
  }
 
  /* Functional */
