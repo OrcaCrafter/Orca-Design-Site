@@ -9,6 +9,24 @@ var UnityInstance = null;
 var Canvas;
 
 function SetupUnityGame (info) {
+    
+    var mode = info.mode;
+
+
+    switch (mode) {
+        case "unity_webgl":
+            SetupUnityWebGL(info);
+        break;
+        case "download":
+            SetupGameDownload(info);
+        break;
+    }
+    
+
+
+}
+
+function SetupUnityWebGL (info) {
     CloseInstance();
 
     var container = document.querySelector("#unity-container");
@@ -71,7 +89,7 @@ function SetupUnityGame (info) {
     };
 
     // By default Unity keeps WebGL canvas render target size matched with
-    // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+    // the DOM size of the canvas element (scaled by window.devicePixelRatio).
     // Set this to false if you want to decouple this synchronization from
     // happening inside the engine, and you would instead like to size up
     // the canvas DOM size and WebGL render target sizes yourself.
@@ -107,9 +125,9 @@ function SetupUnityGame (info) {
     script.onload = () => {
         createUnityInstance(Canvas, config, (progress) => {
             progressBarFull.style.width = 100 * progress + "%";
-         }).then((unityInstance) => {
+        }).then((unityInstance) => {
             loadingBar.style.display = "none";
-
+            
             UnityInstance = unityInstance;
         }).catch((message) => {
             alert(message);
@@ -126,4 +144,23 @@ function CloseInstance () {
         Canvas.style.width = "0px";
         Canvas.style.height = "0px";
     }
+}
+
+function CloseGameDownload () {
+    document.getElementById("download").classList.remove("open");
+
+    document.getElementById("download-title").innerHTML = "";
+    document.getElementById("download-body").innerHTML = "";
+    document.getElementById("download-link").href = "";
+}
+
+function SetupGameDownload (info) {
+    //Open download options screen
+
+    document.getElementById("download").classList.add("open");
+
+    document.getElementById("download-title").innerHTML = info.title;
+    document.getElementById("download-body").innerHTML = info.body;
+    document.getElementById("download-link").href = info.path;
+
 }

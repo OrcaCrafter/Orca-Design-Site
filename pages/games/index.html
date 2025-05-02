@@ -12,11 +12,12 @@
     <meta name="viewport" content="width=320, initial-scale=1.0" />
     <title>Games | Orca Design</title>
     <link rel="stylesheet" href="/css/games.css"/>
+	<link rel="stylesheet" href="/css/ribbon.css"/>
     <link rel="icon" type="image/x-icon" href="/assets/profile_pic.ico">
     <script src="/js/copy.js"></script>
 	<script src="/js/path.js"></script>
 	<script src="/js/list.js"></script>
-	<script src="/js/unity.js"></script>
+	<script src="/js/games.js"></script>
 </head>
 <body id="wip">
 
@@ -55,6 +56,17 @@
 	</div>
 	
 	<div id="games">
+	</div>
+
+	<div id="download">
+		<div>
+			<h2 id="download-title"></h2>
+			<button id="download-close" onclick="CloseGameDownload();">&#10005;</button>
+			<p id="download-body"></p>
+			<a id="download-link">
+				Download
+			</a>
+		</div>
 	</div>
 	
 	<div class="wip_notice">

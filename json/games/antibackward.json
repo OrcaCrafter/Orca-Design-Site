@@ -3,5 +3,6 @@
     "company": "Orca Design",
     "product": "Anti-Back-Ward",
     "version": "0.2.1",
-    "snippet": "/html/games/antibackward_web.html"
+    "snippet": "/html/games/antibackward_web.html",
+    "mode" : "unity_webgl"
 }
