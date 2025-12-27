@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- Set height to 319px because auto sizing doesn't reliable work with post loaded content-->
+<div id="project-list" class="carousel" style="min-height: 319px" data-carousel>
+	<link type="stylesheet" src="/css/list.css">
+	<style>
+		#project-list {
+			min-height: 250px;
+			background-color: skyblue;
+			border-radius: 25px;
+			
+			border-color: rgb(15, 37, 37);
+			border-width: 5px;
+			border-style: solid;
+		}
+
+		.multi-slide {
+			display: flex;
+		}
+
+		.multi-slide > * {
+			display: flex;
+			flex: 1 1 auto;
+			width: 0;/*IDK why this works*/
+		}
+	</style>
+	<button class="carousel-button prev" data-carousel-button=-1>&#8656;</button>
+	<button class="carousel-button next" data-carousel-button=1>&#8658;</button>
+	<ul data-slides>
+		<li class="slide" data-active>
+			<div class="preview" src="/pages/portfolio/grime-world.html"></div>
+		</li>
+		<li class="slide">
+			<div class="preview" src="/pages/portfolio/anti-back-ward.html"></div>
+		</li>
+		<li class="slide">
+			<div class="preview" src="/pages/portfolio/dueling_dungeons.html"></div>
+		</li>
+		<li class="slide">
+			<div class="multi-slide">
+				<div class="preview" src="/pages/portfolio/mods/tf2/ctf_2freak.html"></div>
+				<div class="preview" src="/pages/portfolio/mods/tf2/tr_complex.html"></div>
+			</div>
+		</li>
+	</ul>
+</div>

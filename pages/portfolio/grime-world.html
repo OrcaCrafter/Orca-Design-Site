@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=320, initial-scale=1.0" />
+	<title>Grime World | Orca Design</title>
+	<link rel="stylesheet" href="/css/general.css" />
+	<link rel="stylesheet" href="/css/project.css" />
+	<link rel="stylesheet" href="/css/carousel.css" />
+	<link rel="icon" type="image/x-icon" href="/assets/profile_pic.ico">
+	<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+	<script src="/js/path.js"></script>
+	<script src="/js/copy.js"></script>
+	<script src="/js/carousel.js" defer></script>
+
+	<!-- Snippet -->
+	<div hidden>
+		<div class="snippet" id="snippet">
+			<p>
+				<b style="font-size: 20px" aria-hidden="true">Grime World<br></b>
+				[TODO description]
+			</p>
+			<img class="thumbnail" src="/assets/thumbnails/grime-world.png" alt="Project Preview Image">
+		</div>
+	</div>
+</head>
+<body>
+	<div id=header></div>
+	
+	<div class="content">
+		<h2>About Grime World</h2>
+		Grime World is a relaxing open exploration game about cleaning. Using your water gun, and
+
+		<h3>Gameplay Loop</h3>
+		<p>This is a description</p>
+
+		<h3>Art Style</h3>
+		<p>This is a description</p>
+
+		<h3>Surface Grime</h3>
+		<p>
+		Two shaders are required for the surface grime. A fragment shader that organically dithers the grime
+		when rendering, and a compute shader that updates the UV space map of the grime. Typically to update
+		the pixels on a texture, you would deploy a compute shader that populates one thread per pixel. However,
+		in order to find where a pixel is in 3D space, you need to know what triangle its on in UV space, and
+		where that triangle is in 3D space. To accomplish this, I used the concepts behind multi shader render
+		pipelines.
+		</p>
+		Like a conventional shader pipeline, a first pass is done to calculate position information for the pixels.
+		This shader acts on each triangle, and calculates a 2x2 matrix to convert UV position to <a src="https://en.wikipedia.org/wiki/Barycentric_coordinate_system">
+		Bary Centric Coordinates.</a> Additional information such as the bounds of the triangle UV position, and
+		the vertex positions for the triangle are added to the same buffer.
+		<p>
+		<p>
+		A second shader pass acts on each triangle again, but with higher y and z group counts. Each thread then
+		calculates its Bary centric position based on the triangle index (x), and the UV pixel offset (y, z).
+		First the pixel checks if it is inside the triangle, and anti-aliases based on an array of sub sample points.
+		Then, using the 3D vertex positions, each pixel's 3D position is found. This position can be used to calculate
+		the distance from a check position, and update the grime map accordingly.
+		</p>
+		<img src="/assets/photos/grime-world/texture_dist_3d.png">
+
+		</p>
+		<p>The material shader for the grime was initially a simple shader that multiplies the textures alpha
+		by the grime maps alpha. This lead to nearly unnoticeable amounts of grime left, and didn't feel satisfying
+		to clean. A basic sub pixel dithering would have fixed both, but felt very fake. Instead each screen pixel
+		calculates a value based on a <a src="https://en.wikipedia.org/wiki/Worley_noise">Worley Noise Map</a>
+		This map is calculated based on an RGB noise texture. 2 color channels are used to position a seed in each pixel,
+		and the third channel is used to add randomness to the threshold value. Then, the alpha is set to 1 or 0
+		if the grime map is greater than or less than the Worley Noise Value. This system initially caused a severe
+		performance hit, but because it looked better with a lower resolution grime map, that performance hit was
+		made back elsewhere.
+		</p>
+		<div>
+			<div style="width:50%; float:left; padding:5px; margin: -10px">
+				<img src="/assets/photos/grime-world/worley.png" style="width:100%; object-fit:contain">
+			</div>
+			<div style="width:50%; float:right; padding:5px; margin: -10px">
+				<img src="/assets/photos/grime-world/surface_grime.png" style="width:100%; object-fit:contain">
+			</div>
+		</div>
+		
+		<h3>Volumetric Grime</h3>
+		<p>[Marching cubes]</p>
+		
+
+		<h3>Player Models</h3>
+		<div class="carousel" style="background: darkgray; min-height: 200px;" data-carousel>
+			<button class="carousel-button prev" data-carousel-button=-1>&#8656;</button>
+			<button class="carousel-button next" data-carousel-button=1>&#8658;</button>
+
+			<ul data-slides>
+				<li class="slide" data-active>
+					<model-viewer alt="Water Gun"
+						src="/assets/models/grime_world/water_gun.glb"
+						shadow-intensity="1" camera-controls
+						touch-action="pan-y"
+					></model-viewer>
+					<p class="sub">Water Gun and attachments (Unfinished)</p>
+				</li>
+				<li class="slide">
+					<model-viewer alt="Water Bomb"
+						src="/assets/models/grime_world/water_bomb.glb"
+						shadow-intensity="1" camera-controls
+						touch-action="pan-y"
+					></model-viewer>
+					<p class="sub">Water Bomb</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script>
+		CopyElementByID('/html/header.html', '#header', '#header').then(() => {
+			BuildPaths([
+				{file: "/index.html", name:"Home"},
+				{file: "/pages/lists/project_list.html", name:"Projects"}
+			]);
+		});		
+	</script>
+</body>
+</html>
