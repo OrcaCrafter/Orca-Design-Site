@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=320, initial-scale=1.0" />
+	<title>Stat Clocks | Orca Design</title>
+	<link rel="stylesheet" href="/css/general.css" />
+	<link rel="stylesheet" href="/css/project.css" />
+	<link rel="stylesheet" href="/css/carousel.css" />
+	<link rel="icon" type="image/x-icon" href="/assets/profile_pic.ico">
+	<script src="/js/path.js"></script>
+	<script src="/js/copy.js"></script>
+	<script src="/js/carousel.js" defer></script>
+
+	<!-- Snippet -->
+	<div hidden>
+		<div class="snippet" id="snippet">
+			<p>
+				<b style="font-size: 20px" aria-hidden="true">Stat Clocks<br></b>
+				Your tools should tell a story
+			</p>
+			<img class="thumbnail" src="/assets/thumbnails/animality.png" alt="Project Preview Image">
+		</div>
+	</div>
+</head>
+<body>
+	<div id=header></div>
+	
+	<div class="content">
+		<h2>Stat Clocks</h2>
+		Your tools should tell a story
+
+		<h3>Features</h3>
+	</div>
+
+	<script>
+		CopyElementByID('/html/header.html', '#header', '#header').then(() => {
+			BuildPaths([
+				{file: "/index.html", name:"Home"},
+				{file: "/pages/lists/project_list.html", name:"Projects"}
+			]);
+		});		
+	</script>
+</body>
+</html>
